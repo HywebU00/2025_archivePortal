@@ -1,51 +1,40 @@
-// 國家檔案典藏統計｜STATISTICS
+// 首頁：國家檔案典藏統計｜STATISTICS
+// .main>section:not(.statistics){display: none;}
+
 .statistics{
-  --pdV: 70px;
 
-  width: 100%; margin: 0 auto;
-  background:#123650 url(../images/statisticsBg.jpg) no-repeat center center;
-  background-size: cover;
-  color: $white;
+  margin: 0 auto; padding: 100px 0;
 
-  .blockHeader, article {
-    width: 88%;margin: 0 auto;
+  .blockHeader{ margin-bottom: 30px;}
+
+  .chart {
+    a {
+      display: block;margin: 0;padding: 20px 0;
+      transition: .2s;
+      img {
+        display: block;
+        width: 94%; max-width: 740px; margin: 0 auto;
+      }
+      &:hover, &:focus {
+        img{box-shadow: $primaryColor 0 0 0 3px;}
+      }
+    }
   }
-  .blockHeader{padding-top: var(--pdV); color: $white;}
+
   article{
-    padding-bottom: var(--pdV);
-    font-size: 1.1em;line-height: 1.6; 
+    padding: 60px 6vw 40px;margin: 0;
+    font-size: 1.375em;line-height: 1.8; 
+    background: $primaryColor;
+    color: $white;
     p{margin: 0 0 1em;}
     em{
-      font-weight: bold; font-style: normal; font-size: 1.5em;
+      display: inline-block;
+      font-family: 'Times New Roman', Times, serif;
+      font-style: normal; font-weight: bold; font-size: 2.2em;
     }
   }
 
-  .chart{
-    --deg : 0deg;
 
-    margin: 0; padding: var(--pdV) 0;
-    background: linear-gradient(var(--deg),
-    rgba(143, 253, 255, 0.8) 0%,
-    rgba(143, 253, 255, 0.5) 33.33%,
-    rgba(143, 253, 255, 0.2) 100%);
-    backdrop-filter: blur(5px) ;
-    a{ 
-      display: block; width: 88%; margin: 0 auto;
-      transition: .2s;
-      img{
-        display: block; width: 100%; padding: 30px 0;
-        background-color: $white;
-      }
-      &:hover{box-shadow: $white 0 0 0 3px;}
-      &:focus{box-shadow: $primaryColor 0 0 0 3px;}
-
-    }
-    // iframe{
-    //   display: block; width: 88%; height: 72vw;
-    //   margin: 0 auto; padding: 30px 0;
-    //   outline: 1px dashed #fff9;
-    // }
-  }
 
   .more{
     text-align: left; margin: 3em 0 0; padding: 0;
@@ -62,24 +51,41 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    --pdV: 110px;
 
-    position: relative;
+    padding: 140px 0 100px;
+    background: url(../images/st_bg0.jpg) no-repeat center top;
+    background-size:100% auto;
 
-    .blockHeader, article{margin: 0 53% 0 5%; width: auto;}
-    .blockHeader{ margin-bottom:80px;}
-    article{ font-size: 1.3em;}
+    &::after {content: ''; display: block; clear: both;}
 
     .chart{
-      --deg : 270deg;
-
-      position: absolute; left: 50%; top: 0; bottom: 0;
-      width: 50%; padding: var(--pdV) 2px;
-      a{width: 86%;}
+      float: left;width: 69%; margin: 0;
+      a{
+        margin: 0 30px 0 0; padding-top: 120px;
+        img{ margin: 0 0 0 auto; }
+      }
     }
+    article {
+      padding: 190px 20px 120px min(40px, 3vw);
+      margin-left: auto;
+      width: 31%; max-width: 396px;
+      min-height: 600px;
+      background: url(../images/st_bg.jpg) no-repeat right center;
+      background-size: cover;
+      clip-path: polygon(0 50px, 100% 0, 100% calc(100% - 50px), 0 100%);
+
+    }
+
   }
 
   @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum;
+    // width: $wwMaximum;
+    .chart{
+      width: $wwMaximum*.69;
+      margin-left: calc(50% - $wwMaximum*.5);
+    }
+    article{
+      margin-right: calc(50% - $wwMaximum*.5);
+    }
   }
 }
