@@ -1,0 +1,363 @@
+// 頁尾
+
+// webFooter 內的元件、模組
+// --------------------------------------------------------------- //
+// 開關
+.fatFootCtrl{
+  --ting: #fff;
+  --bg: #000;
+  --size: 56px;
+  --arrowSize: 22px;
+
+  position: absolute; z-index: 9; 
+  top: 0; right: $marginDoc;
+  height: var(--size); aspect-ratio: 2;
+  padding: 0; margin:0;
+  text-indent: -20em; overflow: hidden;
+  border: none; box-shadow: none;
+  background-color: var(--bg);
+
+  &::before, &::after {content: ''; position: absolute;}
+  &::after {
+    width: 2px; height: 28px;
+    background-color: #fff;
+    left: calc(50% - 2px); top: 14px;
+  }
+  &::before {
+    width: var(--arrowSize);height: var(--arrowSize);
+    left: calc( var(--size) - var(--arrowSize)/2 - 1px); 
+    top: calc( 50% - var(--arrowSize)/2 );
+    rotate: 45deg;
+    border-width: 2px;
+    border-style: solid;
+    border-right-color: transparent; border-bottom-color: transparent;
+    border-left-color: var(--ting); border-top-color: var(--ting);
+    transition: .25s;
+  }
+
+  &:hover, &:focus {
+    --bg: #{$primaryColor};
+
+    box-shadow: none;
+    background-color: var(--bg);
+  }
+
+
+  &.closed{
+    &::before{
+      border-left-color: transparent; border-top-color: transparent;
+      border-right-color: var(--ting); border-bottom-color: var(--ting);
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    right: $marginDocMax;
+  }
+}
+
+// fat footer
+// --------------------------------------------------------------- //
+// 可開合區
+.fatFooter {
+  position: relative; padding: 100px 0 40px;
+  background-color: $secondaryColor;
+}
+
+// 頁腳選單
+.siteTree{
+  margin: 0 auto; width: $mobileWidth;
+  ul {
+    list-style: none;margin: 0;padding: 0;
+    line-height: 1.3;
+  }
+  li{ 
+    margin: 0;padding: 0;
+    a{display: block; color: $fontColor; text-decoration: none;}
+  }
+
+  &>ul{
+    margin: 0 auto; 
+    display: flex; flex-flow: row wrap;
+    gap: 20px;
+
+    &>li{
+      flex: 0 0 calc(50% - 10px);
+      margin: 0 0 20px; padding: 0;
+      &>a{
+        position: relative; 
+        padding: 0 0 4px;
+        &::after{
+          content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+          height: 0; background-color: $primaryColor;
+          transition: .1s;
+        }
+        &:hover, &:focus{
+          &::after { height: 4px;}
+          &+ul{border-top-color: $primaryColor;}
+        }
+      }
+
+      &>ul{
+        display: none;
+        margin-bottom: 3em; padding-top: .5em;
+        font-size: .83em;
+        
+        &>li{
+          margin: .4em 0;
+          &>a{
+            position: relative;
+            padding: .5em 0 .1em;
+            border-bottom: 1px solid transparent;
+            transition: .2s;
+            &::after {
+              content: ''; position: absolute; bottom: 0; left: 0; right: 100%;
+              height: 2px;
+              background-color: $primaryColor;
+              transition: .2s;
+            }
+            &:hover, &:focus{
+              // padding-left: 12px; padding-right: 0;
+              &::after{right: 0;}
+            }
+            &:focus{border-bottom-color: $primaryColor;}
+          }
+        }
+
+        // 只顯示到第二層
+        ul{display: none;}
+      }
+    }
+  }
+
+  @media screen and (min-width: calc($wwSlim + 160px)){
+    &>ul{
+      &>li{
+        flex-basis: calc(25% - 15px);
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    &>ul{
+      &>li{
+        flex-basis: calc(20% - 16px);
+      }
+    }
+  }
+ 
+  @media screen and (min-width: $wwNormal){
+    &>ul{
+      gap: 15px;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      &>li{
+        flex:1 1 calc(10% - 13px);
+        margin-top: 0;
+        &>ul>li{margin-bottom: .8em;}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    width: $maximumWidth;
+  }
+
+}
+
+// --------------------------------------------------------------- //
+
+
+
+
+// --------------------------------------------------------------- //
+.webFooter {
+  position: relative;
+
+  .middle, .base {
+    width: $mobileWidth; margin: 0 auto;
+   
+  }
+
+  .middle{
+    padding: 50px 0 20px;
+    img.logo {
+      display: block;
+      width: 94%;max-width: 400px; height: auto;
+    }
+  }
+
+
+  .base{
+    line-height: 1.3; font-size: .83em;
+    padding: 0 0 40px;
+    ul, p{ line-height: inherit;}
+
+    &>.column{
+      overflow: hidden;
+      margin-bottom: 20px;
+
+      
+      &:nth-child(1) {
+        
+      }
+      &:nth-child(2) {
+        padding: 5px 0;
+        p{ 
+          margin:0;
+          &+p{ margin-top: 6px;}
+        }
+      }
+      &:nth-child(3) {
+      }
+    }
+  }
+
+  .iconLinks {
+    // flex: 0 1 88px;
+    outline: 1px dashed #f008;
+    outline-offset: -1px;
+    list-style: none;
+    margin: 0;padding: 0;
+    li{
+      float: left;
+      margin: 4px; padding: 4px;
+      a{ 
+        display: block;
+        width: 46px; height: 46px; border-radius: 50%;
+        overflow: hidden;
+        transition: .2s;
+        box-shadow: $primaryColor 0 0 0 3px;
+
+        img{ 
+          display: block; margin:10% auto 0;
+          width: 80%; height: 80%;  object-fit: contain;
+          border-radius: 50%;
+          outline: 1px dotted #f008;
+          outline-offset: -1px;
+        }
+        &:hover, &:focus{}
+        &:focus {}
+      }
+    }
+  }
+
+
+  .textLinks {
+    list-style: none; margin:20px 0;padding: 0;
+    overflow: hidden;
+    &+.update{ clear: both;}
+    li{
+      position: relative;
+      margin: 0 .55em 12px 0; padding: 0 .6em 0 0;
+      float: left;
+      &::after {
+        content: ''; position: absolute;
+        right: 0; top: 0; height: 1.2em; width: 1px;
+        background-color: $fontColorLight;
+      }
+      &:last-child {
+        margin-right: 0; padding-right: 0;
+        &::after {display: none;}
+      }
+      a{
+        display: block;position: relative;
+        text-decoration: none;
+        &::after {
+          content: ''; 
+          position: absolute; left: 0; bottom: 0; right: 0;
+          height: 2px; 
+          transition: .2s;
+        }
+        &:hover, &:focus { 
+          &::after{background-color: $primaryColor;}
+        }
+        &:focus-visible {
+          box-shadow: $primaryColor 0 0 0 1px inset;
+          // &::after{height: 0;}
+        }
+      }
+    }
+  }
+
+  .logoArchives{
+    display: inline-block;
+    img{ display: block; width: 186px;}
+  }
+  .badge{
+    width: 120px; float: right;
+    img{ display: block; width: 100%; height: auto;}
+  }
+
+  .update{
+    list-style: none; margin: 0;padding: 0;line-height: 1.1;
+    li{ display: inline-block;
+      &+li{ margin-left: 30px;}
+    }
+  }
+  
+ 
+  @media screen and (min-width: $wwNormal){
+    .middle{
+      // flex-wrap: nowrap;justify-content: flex-end;
+
+      .textLinks {
+        flex: 0 1 calc(90% - 360px);
+        max-width: 37em;
+        display: flex; flex-flow: row nowrap;
+        align-items: flex-start; justify-content: flex-end;
+        margin:5px 0 0 20px; padding: 0;
+        border: none; line-height: 1.2;
+        li{
+          position: relative;
+          margin: 10px 0 10px .95em; padding: 0 0 0 1em;
+          &::before {
+            content: ''; position: absolute;left: 0; top: 0; bottom: 0;
+            width: 1px; background-color: $white;
+          }
+    
+          &:first-child {
+            margin-left: 0; padding-left: 0;
+            &::before{ display: none;}
+          }
+        }
+      }
+    }
+  
+    .base{
+      display: flex; justify-content: space-between;
+      gap: 3vw;
+      &>.column{
+        padding: 5px 0 0;
+        &:nth-child(1){
+          flex: 0 0 190px;
+        }
+        &:nth-child(2){
+          flex: 1 1 60%;
+        }
+        &:nth-child(3){
+        }
+      }
+
+    }
+
+    .logoArchives { display: block;}
+
+    .badge{
+      float: none; display: block;
+      margin: 20px 0 0;
+    }
+
+    .textLinks {
+      margin:18px 0 6px;
+      li{ margin-bottom: 0; }
+    }
+    .update{ margin: 0; }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    .middle, .base { width: $maximumWidth;}
+
+  }
+
+}
+// --------------------------------------------------------------- //

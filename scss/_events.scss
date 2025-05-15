@@ -1,0 +1,144 @@
+// 首頁：近期活動
+// .main>section:not(.events) { display: none;}
+// .main>section.explore {display: block;}
+
+.events{
+  display: flex; flex-flow: row wrap;
+  position: relative;
+  padding: 20px 0; margin: 50px 0 50px 3vw;
+  .blockHeader{ 
+    flex : 0 0 100%;
+    margin: 0 auto 40px; 
+  }
+
+  // 文字區
+  .titles{
+    flex: 0 0 37vw; width: 37vw;
+    margin: 0; padding: 30px 15px 30px 0;
+    time{ font-size: min(3.2vw, 1.2em); line-height: 1.6; color: $fontColor;}
+    p{
+      margin: 25px 0 0; width: 35vw;
+      font-size: min(calc((35vw - 15px)/8), 1.5em);
+      font-weight: bold; 
+      line-height: 1.6;
+      display: -webkit-box; 
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      overflow: hidden;
+    }
+
+    .slick-arrow {
+      bottom: 10px;
+      &.slick-prev { left: 0;}
+      &.slick-next { translate: 130% 0;}
+    }
+  }
+
+  // 海報區
+  .images{
+    position: relative;
+    flex: 0 0 60vw; width: 60vw;
+    margin: 0; padding-bottom: 50px; 
+    .flowItem{
+      margin:0; 
+      aspect-ratio: .7;
+      height: auto;
+      a {
+        position: relative;
+        display: block; width: 100%; height: 100%;
+        text-decoration: none; color: $fontColor;
+        transition: .2s;
+        &::before{
+          content: ''; 
+          position: absolute; left: 0; right: 0; top: 0;bottom: 0;
+        }
+        &:hover::before {box-shadow: $linkColor 0 0 0 1px inset;}
+        &:focus::before {box-shadow: $linkColor 0 0 0 3px inset;}
+      }
+      img{
+        display: block;
+        width: 100%; height: 100%; object-fit: cover;
+        transition: .2s;
+      }
+    }
+
+    .slick-dots{
+      margin: 30px auto 10px;
+    }
+  }
+
+  .more{
+    margin: 30px auto 10px 50%;
+    translate: -50% 0;
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+    overflow: hidden;
+
+    .titles {
+      flex-basis: 27vw; width: 27vw;
+      p{ font-size: 1.5em; width:98%;}
+      time{font-size: 1.1em;}
+    }
+
+    .images{
+      flex-basis: 74vw; width: 74vw;
+      margin-right: -4vw;
+      .flowItem{
+        transform-origin: bottom;
+        transition: .4s;
+        &:not(.slick-current) {scale: .82;}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    overflow: hidden;
+
+    .titles {
+      flex-basis: 23vw;width: 23vw;
+      time{ font-size: 1.2em;}
+    }
+
+    .images{
+      flex-basis: 76vw;  width: 76vw; margin-right: -2vw;
+      .flowItem{
+        &.slick-current +.flowItem{ translate: 1.3vw 0;}
+      }
+      .slick-dots{ text-align: right; margin-right:5vw;}
+    }
+  }
+
+
+  @media screen and (min-width: $wwMaximum){
+
+    width: $wwMaximum;
+    margin-left: auto;
+    margin-right: auto;
+
+    .titles { 
+      flex-basis: $wwMaximum*.23;
+      width: $wwMaximum*.23; 
+      margin-left: $wwMaximum*.03;
+      p{ font-size: 1.5em;}
+
+      .slick-arrow {
+        &.slick-prev { left:0;}
+      }
+    }
+
+    .images{
+      flex-basis: $wwMaximum*.76;
+      width: $wwMaximum*.76;
+      margin-right: $wwMaximum*(-0.02);
+
+      .flowItem{
+        &.slick-current +.flowItem{ translate: $wwMaximum*.013 0;}
+      }
+      .slick-dots{ text-align: right; margin-right: $wwMaximum*.05;}
+    }
+
+  }
+
+}

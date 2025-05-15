@@ -1,0 +1,65 @@
+// 首頁：大圖輪播
+// .main>section:not(.bigBanner) { display: none;}
+
+.bigBanner{
+
+  // 輪播圖片區
+  .bbImages{
+    width: 100%;aspect-ratio: 2; overflow: hidden;
+    .flowItem{
+      a{ 
+        display: block;position: relative; 
+        &::before{
+          content: ''; z-index: -1;
+          position: absolute;left: 0;right: 0;top: 0;bottom: 0;
+          box-shadow: $linkColor 0 0 0 1px inset;
+        }
+        &:hover, &:focus{
+          &::before{ z-index: 5;}
+        }
+        &:focus{
+          &::before{box-shadow: $linkColor 0 0 0 3px inset;}
+        }
+      }
+      img{ display: block; width: 100vw; aspect-ratio: 2; }
+    }
+  }
+
+  button.slick-arrow{
+    --tinge: #fff;
+    --bgc:rgb(0 0 0 / .5);
+
+    bottom: 12px;
+    &.slick-prev { left: 12px; }
+    &.slick-next { right: 12px; }
+  }
+
+  .slick-dots {
+    display: inline-block; z-index: 99;
+    margin: 0 auto 0 50%;
+    translate: -50% calc(-100% - 20px);
+  }
+
+  @media screen and (min-width: $wwNormal ){
+    button.slick-arrow{
+      opacity: 0;
+      &:focus { opacity: 1;}
+    }
+    &:hover{
+      button.slick-arrow{opacity: 1;}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+
+    width: $wwMaximum; margin: 0 auto; 
+    
+  
+    // 圖片區
+    .bbImages{
+      .flowItem img{ width: $wwMaximum;}
+    }
+
+  }
+
+}

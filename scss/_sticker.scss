@@ -1,0 +1,61 @@
+// ------------------------------------------------------ //
+.sticker{
+  display: none;
+  @media screen and (min-width: $wwNormal){
+    // display: block;
+    position: fixed; top: 250px; right: 0; z-index: 90;
+    padding: 8px 12px;
+    background-color: rgb(255 255 255 / .8);
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / .4);
+
+    ul{ 
+      list-style: none; margin: 0 auto; padding:0; 
+      li{
+        margin: 20px auto;padding: 0;
+        img{display: block; margin: 0 auto;}
+        a {
+          display: block; margin: 0 auto;
+          text-decoration: none;color: $fontColor;
+          transition: .3s;
+        }
+        &.icon{
+          &>a{
+            width: 46px; height: 46px;
+            box-shadow: #000 0 0 0 3px; border-radius: 50%;
+            img{height: 100%; }
+            &:hover, &:focus {
+              background-color: $primaryColor;
+              box-shadow: /* $primaryColor 0 0 0 3px, $white 0 0 0 5px, */ $primaryColor 0 0 0 8px;
+              img{ 
+                filter: brightness(16);
+              }
+            }
+          }
+
+          &+.text{ margin-top: 30px;}
+        }
+        &.text{
+          margin-top: 24px;
+          line-height: 1.5;   
+          &>a{ 
+            padding:2px 10px 1px; text-align: center;
+            width: 2em;
+            box-sizing: content-box;
+            &:hover, &:focus {
+              background-color: $primaryColor; color: $white;
+              box-shadow: $primaryColor 0 0 0 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: calc($wwMaximum + 160px)){
+    right: auto; left: calc(50% + $wwMaximum*.5);
+  }
+
+}
+
+
+// ------------------------------------------------------ //
