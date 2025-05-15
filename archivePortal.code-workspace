@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../archivePortal"
+		}
+	],
+	"settings": {
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "compressed",
+				"extensionName": ".css",
+				"savePath": "~/../css"
+			}
+		],
+		"liveSassCompile.settings.includeItems": [
+			"/scss/style.scss",
+			// "/scss/pageNotFound.scss"
+			// "/en/scss/style.scss"
+		],
+		"liveSassCompile.settings.showOutputWindowOn": "Warning",
+		"liveSassCompile.settings.autoprefix": [
+		
+		
+		],
+		"liveSassCompile.settings.generateMap": true,
+		"liveServer.settings.port": 5501
+	}
+}

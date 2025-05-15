@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>檔案管理局 AP03-3</title>
+  <link href="images/favicon.ico" rel="icon" type="image/ico">
+
+  <link rel="stylesheet" href="slick/slick.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="js/jquery.touchSwipe.min.js"></script>
+  <script src="js/uieffect.js"></script>
+</head>
+<body>
+  <a class="goCenter" href="#aC" tabindex="0">按 Enter 到主內容區</a>
+
+  <header class="webHeader">
+    <a class="accesskey" href="#aU" id="aU" accesskey="U" title="版頭區">:::</a>
+    <h1 aria-label="國家發展委員會檔案管理局"><a href="#"><img src="images/h1.png" alt=""></a></h1>
+    
+    <nav class="headNav">
+      <ul>
+        <li><a href="mp.html">回首頁</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">網站導覽</a></li>
+      </ul>
+    </nav>
+
+    <!-- 20250212 -->
+    <button type="button" class="sidebarCtrl" aria-label="開啟側欄"></button>
+    <button type="button" class="searchCtrl" aria-label="開啟查詢區"></button>
+    <section class="search">
+      <form action="">
+        <input type="text" placeholder="請輸入關鍵字">
+        <input type="button" value="查詢">
+      </form>
+      <div class="hotKeywords">
+        <span class="label">熱門查詢詞</span>
+        <ul>
+          <li><a href="#">檔案法</a></li>
+          <li><a href="#">下載專區</a></li>
+          <li><a href="#">金檔獎</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="#">國家檔案</a>
+          <ul>
+            <li><a href="#">徵集</a></li>
+            <li><a href="#">保存維護</a></li>
+          </ul>
+        </li>
+        <li><a href="#">機關文檔</a>
+          <ul>
+            <li><a href="#">檔案管理制度</a></li>
+            <li><a href="#">文書檔案資訊管理</a></li>
+            <li><a href="#">金檔獎暨金質獎</a></li>
+            <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+            <li><a href="#">教育訓練報名</a></li>
+            <li><a href="#">專業認證</a></li>
+            <li><a href="#">統計資料</a></li>
+          </ul>
+        </li>
+        <li><a href="#">便民服務</a>
+          <ul>
+            <li><a href="#">政府資訊公開</a></li>
+            <li><a href="#">志工與實習</a></li>
+            <li><a href="#">下載專區</a></li>
+            <li><a href="#">常見問答</a></li>
+            <li><a href="#">文創商店</a></li>
+            <li><a href="#">雙向溝通</a></li>
+            <li><a href="#">雙語詞彙</a></li>
+            <li><a href="#">影音專區</a></li>
+            <li><a href="#">合作交流</a></li>
+            <li><a href="#">意見信箱</a></li>
+            <li><a href="#">滿意度調查</a></li>
+            <li><a href="#">相關網站</a></li>
+          </ul>
+        </li>
+        <li><a href="#">國家檔案館</a>
+          <ul>
+            <li><a href="#">願景藍圖</a></li>
+            <li><a href="#">基地位置</a></li>
+            <li><a href="#">建館紀要</a></li>
+            <li><a href="#">最新動態</a></li>
+          </ul>
+        </li>
+        <li><a href="#">認識我們</a>
+          <ul>
+            <li><a href="#">歷史沿革</a></li>
+            <li><a href="#">首長介紹</a></li>
+            <li><a href="#">組織職掌</a></li>
+            <li><a href="#">局館政策</a></li>
+            <li><a href="#">文檔法規</a></li>
+            <li><a href="#">大事紀要</a></li>
+            <li><a href="#">省政資料館</a></li>
+            <li><a href="#">各館中心介紹</a></li>
+            <li><a href="#">促轉基金</a></li>
+            <li><a href="#">檔案服務宣言</a></li>
+            <li><a href="#">業務窗口</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- 行動版側欄 -->
+  <aside class="sidebar">
+  </aside>
+
+  <main class="main">
+    <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
+    <div class="breadcrumb" title="瀏覽路徑">
+      <ul>
+        <li><a href="mp.html">首頁</a></li>
+        <li><a href="#">便民服務</a></li>
+        <li><a href="#">雙向溝通</a></li>
+      </ul>
+    </div>
+
+    <div class="pageHeader">
+      <h2>雙向溝通</h2>
+      <section class="funcBar">
+        <ul>
+          <li class="fontSize compound">
+            <button type="button" aria-label="字體">字</button>
+            <ul>
+              <li><button class="smallFont" type="button">小</button></li>
+              <li><button class="mediumFont" type="button">中</button></li>
+              <li><button class="largeFont" type="button">大</button></li>
+            </ul>
+          </li>
+          <li class="print"><button type="button" aria-label="列印"></button></li>
+          <li class="share compound">
+            <button type="button" aria-label="分享"></button>
+            <ul>
+              <li><a target="_blank" title="分享到 Facebook（開新視窗）" href="https://www.facebook.com/"><img src="images/icon_fb.png" alt="Facebook"></a></li>
+              <li><a target="_blank" title="分享到 X（開新視窗）" href="https://twitter.com/"><img src="images/icon_X.png" alt="X"></a></li>
+              <li><a target="_blank" title="分享到 LINE（開新視窗）" href="https://access.line.me/"><img src="images/icon_line.png" alt="LINE"></a></li>
+            </ul>
+          </li>
+          <li class="back"><a href="javascript:;" aria-label="回前頁"></a></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="steps">
+      <ul>
+        <li class="done"><em>1</em>個資聲明</li>
+        <li class="done"><em>2</em>E-mail驗證</li>
+        <li class="now"><em>3</em>資料填寫</li>
+        <li><em>4</em>預覽確認</li>
+        <li><em>5</em>案件送出成功</li>
+      </ul>
+    </section>
+
+    <section class="preface">
+      <h3>填寫注意事項</h3>
+      <ol>
+        <li>當您提出問題後，於上班時間內，我們會由專人受理並處理您的問題，處理時間約需六至八個工作天。</li>
+        <li>問題請避免涉及人身攻擊、謾罵、詆毀之言詞，涉及上述內容管理者將直接刪除，不另行通知。</li>
+        <li>問題描述若使用特殊符號＜＞：；”’＆％＄／和--與..等相關字請用全型，以利系統判斷處理。</li>
+      </ol>
+    </section>
+
+    <section class="formA">
+      <p class="note">註：<abbr title="必填欄位標註符號" class="required">*</abbr>為必填（選）欄位。</p>
+      <form action="">
+        <table class="layout">
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>姓名</td><td>
+              <input type="text" class="fullWidth" placeholder="請輸入姓名">
+              <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>E-mail電子信箱</td>
+            <td>
+              <input type="email" class="fullWidth" placeholder="例: 111@gmail.com">
+              <p class="msg error" style="display: block;">E-mail格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>聯絡電話</td>
+            <td>
+              <div class="mobilePhoneSet">
+                <label for="mph999">行動電話</label>
+                <input id="mph999" type="tel" placeholder="09********">
+              </div>
+              <div class="phoneSet">
+                <label for="XXX01">市內電話</label>
+                <input type="tel" id="XXX01" class="areaCode" aria-label="區碼" placeholder="區碼">
+                <input type="tel" aria-label="用戶電話號碼" placeholder="用戶電話號碼">
+              </div>
+              <p class="msg hint" style="display: block;">至少需填寫一組聯絡電話。<button class="closeThis" type="button">隱藏</button></p>
+              <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>問題類別</td>
+            <td>
+              <select class="halfWidth">
+                <option value="資訊系統操作">資訊系統操作</option>
+                <option value="檔案目錄彙送帳號密碼">檔案目錄彙送帳號密碼</option>
+                <option value="檔案分類編目及鑑定">檔案分類編目及鑑定</option>
+                <option value="檔案保管">檔案保管</option>
+                <option value="檔案目錄彙送及檢調應用">檔案目錄彙送及檢調應用</option>
+                <option value="金檔(質)獎">金檔(質)獎</option>
+                <option value="檔案庫房設施建置">檔案庫房設施建置</option>
+                <option value="其他">其他</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>問題描述</td>
+            <td>
+              <textarea placeholder="請輸入問題描述"></textarea>
+              <p class="note">為保護您個人資料安全，請勿張貼私敏資料於網站上。字數限300字以內。</p>
+              <p class="msg hint" style="display: block;">小祕訣：建議可先在記事本上編輯內容再將文字貼上，避免重打的可能。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>驗證碼</td>
+            <td>
+              <div class="captchaSet">
+                <img src="publicData/stickyCaptcha.png" alt="">
+                <input type="text" id="captcha" name="captcha" value="">
+                
+                <!-- ＊＊＊ 建議更換 a 元件為 button 元件 ＊＊＊   
+                  <a href="javascript:void(0)" onclick="reloadCaptcha('captchaImg', 'captchaAudio')" class="refresh">更換驗證碼</a>
+                  <a href="javascript:void(0)" onclick="document.getElementById('captchaAudioControl').play()" onkeypress="document.getElementById('captchaAudioControl').play()" class="play">語音播放</a> 
+                -->
+                <button type="button" class="refresh" onclick="reloadCaptcha('captchaImg', 'captchaAudio')">更換驗證碼</button>
+                <button type="button" class="play" onclick="document.getElementById('captchaAudioControl').play()" onkeypress="document.getElementById('captchaAudioControl').play()">語音播放</button>
+  
+                <div id="captchaAudioSpan" style="display:none">
+                    <audio id="captchaAudioControl" controls="">
+                    <source id="captchaAudio" src="/wSite/audioCaptcha.mp3?" type="audio/mp3">
+                  </audio>
+                </div>
+              </div>
+              <p class="note">如果無法使用語音，請<a href="/wSite/audioCaptcha.mp3" title="驗證碼語音檔">下載語音檔案</a>。</p>
+              <p class="msg error" style="display: block;">您輸入的驗證碼錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+        </table>
+        <div class="btnDv">
+          <button type="button">下一步</button>
+          <button type="reset" class="reset">清除重填</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="webFooter">
+    <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁腳區">:::</a>
+
+    <button type="button" class="fatFootCtrl" data-altText="開啟">收合</button>
+
+    <div class="fatFooter">
+      <nav class="siteTree">
+        <ul>
+          <li><a href="#">參訪資訊</a>
+            <ul>
+              <li><a href="#">開放時間</a></li>
+              <li><a href="#">交通資訊</a></li>
+              <li><a href="#">導覽服務</a></li>
+              <li><a href="#">樓層設施</a></li>
+              <li><a href="#">閱覽中心</a></li>
+              <li><a href="#">餐飲資訊</a></li>
+              <li><a href="#">參訪報名</a></li>
+              <li><a href="#">場地預約</a></li>
+              <li><a href="#">聯絡我們</a></li>
+            </ul>
+          </li>
+          <li><a href="#">展覽與活動</a>
+            <ul>
+              <li><a href="#">常設展</a></li>
+              <li><a href="#">特展</a></li>
+              <li><a href="#">展覽回顧</a></li>
+              <li><a href="#">活動</a></li>
+              <li><a href="#">活動回顧</a></li>
+              <li><a href="#">檔案月</a></li>
+              <li><a href="#">活動報名</a></li>
+            </ul>
+          </li>
+          <li><a href="#">檔案應用與研究</a>
+            <ul>
+              <li><a href="#">國家檔案資訊網(A+)</a></li>
+              <li><a href="#">政治檔案服務</a></li>
+              <li><a href="#">主題簡介</a></li>
+              <li><a href="#">國家檔案素材</a></li>
+              <li><a href="#">學術交流</a></li>
+              <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+              <li><a href="#">檔案資源整合查詢平台</a></li>
+              <li><a href="#">檔案調閱</a></li>
+            </ul>
+          </li>
+          <li><a href="#">學習資源</a>
+            <ul>
+              <li><a href="#">檔案支援教學網</a></li>
+              <li><a href="#">利用指導活動</a></li>
+              <li><a href="#">行動展示資源</a></li>
+              <li><a href="#">檔案樂活情報</a></li>
+              <li><a href="#">圖書與刊物</a></li>
+            </ul>
+          </li>
+          <li><a href="#">國家檔案管理</a>
+            <ul>
+              <li><a href="#">徵集</a></li>
+              <li><a href="#">保存維護</a></li>
+            </ul>
+          </li>
+          <li><a href="#">機關服務</a>
+            <ul>
+              <li><a href="#">檔案管理制度</a></li>
+              <li><a href="#">文書檔案資訊管理</a></li>
+              <li><a href="#">金檔獎暨金質獎</a></li>
+              <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+              <li><a href="#">教育訓練報名</a></li>
+              <li><a href="#">專業認證</a></li>
+              <li><a href="#">統計資料</a></li>
+            </ul>
+          </li>
+          <li><a href="#">認識我們</a>
+            <ul>
+              <li><a href="#">歷史沿革</a></li>
+              <li><a href="#">首長介紹</a></li>
+              <li><a href="#">組織職掌</a></li>
+              <li><a href="#">局館政策</a></li>
+              <li><a href="#">文檔法規</a></li>
+              <li><a href="#">大事紀要</a></li>
+              <li><a href="#">省政資料館</a></li>
+              <li><a href="#">各館中心介紹</a></li>
+              <li><a href="#">促轉基金</a></li>
+              <li><a href="#">檔案服務宣言</a></li>
+              <li><a href="#">業務窗口</a></li>
+            </ul>
+          </li>
+          <li><a href="#">便民服務</a>
+            <ul>
+              <li><a href="#">政府資訊公開</a></li>
+              <li><a href="#">志工與實習</a></li>
+              <li><a href="#">下載專區</a></li>
+              <li><a href="#">常見問答</a></li>
+              <li><a href="#">文創商店</a></li>
+              <li><a href="#">雙向溝通</a></li>
+              <li><a href="#">雙語詞彙</a></li>
+              <li><a href="#">影音專區</a></li>
+              <li><a href="#">合作交流</a></li>
+              <li><a href="#">意見信箱</a></li>
+              <li><a href="#">滿意度調查</a></li>
+              <li><a href="#">相關網站</a></li>
+            </ul>
+          </li>
+          <li><a href="#">最新消息</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="middle">
+      <div class="logo">
+        <img src="publicData/footLogo.png" alt="">
+      </div>
+      <ul class="iconLinks">
+        <li><a href="#"><img src="publicData/icon_ft_youtube.svg" alt="YouTube"></a></li>
+        <li><a href="#"><img src="publicData/icon_ft_fb.svg" alt="facebook"></a></li>
+      </ul>
+      <ul class="textLinks">
+        <li><a href="#">政府網站資料開放宣告</a></li>
+        <li><a href="#">隱私權、著作權及資訊安全政策宣告</a></li>
+        <li><a href="#">本局電子信箱</a></li>
+      </ul>
+    </div>
+    
+    <div class="base">
+      <ul class="contact">
+        <li>242030 新北市新莊區中平路439號(北棟)9樓</li>
+        <li>總機：(02)8995-3700</li>
+        <li>傳真：(02)8995-6469</li>
+      </ul>
+      <ul class="update">
+        <li>瀏覽人次：5585488</li>
+        <li>更新日期：112-08-0</li>
+      </ul>
+      <ul class="pics">
+        <li class="badge"><a href="#"><img src="publicData/badge_AA.webp" alt="無障礙標章"></a></li>
+        <li class="qrcode"><img src="publicData/qrcode.png" alt="二維條碼"></li>
+      </ul>
+    </div>
+
+  </footer>
+
+  <button class="goTop" type="button" title="回頁面頂端">回頁首</button>
+
+</body>
+</html>
