@@ -3,12 +3,15 @@
 // .main>section.explore {display: block;}
 
 .events{
-  display: flex; flex-flow: row wrap;
   position: relative;
-  padding: 20px 0; margin: 50px 0 50px 3vw;
+  margin: 100px 0;
   .blockHeader{ 
-    flex : 0 0 100%;
     margin: 0 auto 40px; 
+  }
+
+  .row{
+    display: flex; flex-flow: row nowrap;
+    margin-left: 3vw;
   }
 
   // 文字區
@@ -67,15 +70,9 @@
     }
   }
 
-  .more{
-    margin: 30px auto 10px 50%;
-    translate: -50% 0;
-  }
-
 
   @media screen and (min-width: $wwMedium){
-    overflow: hidden;
-
+    
     .titles {
       flex-basis: 27vw; width: 27vw;
       p{ font-size: 1.5em; width:98%;}
@@ -94,7 +91,12 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    overflow: hidden;
+
+    background: url(../images/events_bg.jpg) no-repeat center bottom;
+    background-size: 100% auto;
+
+    margin: 100px 0;
+    padding-bottom: 200px;
 
     .titles {
       flex-basis: 23vw;width: 23vw;
@@ -113,9 +115,9 @@
 
   @media screen and (min-width: $wwMaximum){
 
-    width: $wwMaximum;
-    margin-left: auto;
-    margin-right: auto;
+    .row{
+      width: $wwMaximum;margin-left: auto;margin-right: auto;
+    }
 
     .titles { 
       flex-basis: $wwMaximum*.23;

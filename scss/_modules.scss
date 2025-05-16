@@ -2,13 +2,14 @@
 // ------------------------------------------------------ //
 .blockHeader{
   margin:10px 0 30px; text-align: center;
-  font-size: 1.67rem; font-weight: bold;line-height: 1.1;
+  font-size: 1.6rem; font-weight: bold;line-height: 1.1;
   color: $fontColor;
   p{
     font-weight: normal; font-size: 1rem; line-height: 1.5;
   }
 
   @media screen and (min-width: $wwNormal){
+     font-size: 1.875rem;
     margin:15px 0 40px;
   }
 }

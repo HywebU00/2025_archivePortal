@@ -1,0 +1,92 @@
+// 首頁：文創商品
+// .main>section:not(.shops) { display: none;}
+
+.shops {
+  margin: 100px 0;
+  .flowItem{
+    padding: 20px 3vw; margin: 0 0 30px;
+    text-align: center;
+      img{
+        display: block; width: 94vw; aspect-ratio: 1;
+        object-fit: contain;
+        margin: 0 auto 16px;
+        background-color: #fff;
+        box-shadow: rgb(0 0 0 / .3) 0 0 10px;
+        transition: .25s;
+      }
+      p{
+        display: inline-block;margin: 16px 0 0;
+        font-size: 1.125em;text-align: left;
+      }
+      a {
+        position: relative;
+        display: block; text-decoration: none;
+        &::before {
+          content: '';
+          position: absolute; left: 0; top:0;
+          width: 100%; aspect-ratio: 1;
+          transition:top .25s, box-shadow .1s;
+        }
+        &:hover {
+          img {
+            translate: 0 -10px;
+            box-shadow: rgb(0 0 0 / .3) 0 10px 17px -2px;
+          }
+          &::before{ top: -10px; box-shadow: $grayDark 0 0 0 1px; z-index: 9;}
+        }
+        &:focus {
+          &::before{ box-shadow: $primaryColor 0 0 0 4px;}
+        }
+      }
+
+
+  }
+
+  .flow{ margin: 0 auto;padding: 0 0 10px; }
+
+  .slick-arrow {
+    bottom: 10px;
+    &.slick-prev { left: 3vw;}
+    &.slick-next { translate: calc(100% + 24px + 3vw) 0;}
+  }
+
+  .slick-dots{
+    text-align: right;
+    margin: 10px 4vw 25px 190px;
+  }
+
+  @media screen and (min-width: $wwMedium) {
+    .flowItem {
+      padding: 20px;
+      img {width: 100%;}
+    }
+
+    .slick-arrow {
+      &.slick-prev { left: 20px;}
+      &.slick-next { translate: calc(100% + 44px) 0;}
+    }
+    .slick-dots{ margin-right: 30px;}
+
+  }
+
+
+  @media screen and (min-width: $wwNormal){
+
+    .flow {margin-left: 3vw; margin-right: -20px;}
+    .flowItem{
+      img{box-shadow: rgb(0 0 0 / .3) 0 0 15px;}
+    }
+    .slick-dots{ margin-right: 50px;}
+
+  }
+
+
+
+  @media screen and (min-width: $wwMaximum) {
+
+    .flow {
+      width: $wwMaximum*.97;
+      margin-left: auto; margin-right: calc(50% - $wwMaximum*.5 - 20px);
+    }
+  }
+}

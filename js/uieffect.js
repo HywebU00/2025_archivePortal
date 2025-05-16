@@ -1080,7 +1080,6 @@ $(function(){
 
   // 把向左箭頭搬移到向右箭頭之前（移到 .slick-list 之後）
   _exploreFlow.find('.slick-arrow.slick-prev').insertBefore( _exploreFlow.find('.slick-arrow.slick-next'));
-
   // --------------------------------------------------------------- //
 
 
@@ -1133,6 +1132,43 @@ $(function(){
   // 把向左箭頭搬移到向右箭頭之前（移到 .slick-list 之後）
   _eventTitle.find('.slick-arrow.slick-prev').insertBefore( _eventTitle.find('.slick-arrow.slick-next'));
   // --------------------------------------------------------------- //
+
+  // 文創商品
+  // --------------------------------------------------------------- //
+  const _shops = $('.shops').find('.flow');
+  _shops.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplaySpeed: 5000,
+    speed: 800,
+    autoplay: false,
+    arrows: true,
+    dots: true,
+    fade: false,
+    infinite: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3
+        }
+      }
+    ]
+  });
+
+  // 把向左箭頭搬移到向右箭頭之前（移到 .slick-list 之後）
+  _shops.find('.slick-arrow.slick-prev').insertBefore( _shops.find('.slick-arrow.slick-next'));
+  // --------------------------------------------------------------- //
+
+
+
 
 
 
