@@ -1,7 +1,7 @@
 // 首頁區塊標題字
 // ------------------------------------------------------ //
 .blockHeader{
-  margin:10px 0 30px; text-align: center;
+  margin:0 0 30px; padding-top: 10px; text-align: center;
   font-size: 1.6rem; font-weight: bold;line-height: 1.1;
   color: $fontColor;
   p{
@@ -9,8 +9,7 @@
   }
 
   @media screen and (min-width: $wwNormal){
-     font-size: 1.875rem;
-    margin:15px 0 40px;
+    font-size: 1.875rem;
   }
 }
 // ------------------------------------------------------ //

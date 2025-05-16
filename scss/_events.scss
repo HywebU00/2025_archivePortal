@@ -1,10 +1,9 @@
 // 首頁：展覽與活動
 // .main>section:not(.events) { display: none;}
-// .main>section.explore {display: block;}
 
 .events{
   position: relative;
-  margin: 100px 0;
+  margin: 50px 0 100px;
   .blockHeader{ 
     margin: 0 auto 40px; 
   }
@@ -45,7 +44,6 @@
     .flowItem{
       margin:0; 
       aspect-ratio: .7;
-      height: auto;
       a {
         position: relative;
         display: block; width: 100%; height: 100%;
@@ -65,9 +63,7 @@
       }
     }
 
-    .slick-dots{
-      margin: 30px auto 10px;
-    }
+    .slick-dots{ margin: 30px auto 10px; }
   }
 
 
@@ -95,7 +91,7 @@
     background: url(../images/events_bg.jpg) no-repeat center bottom;
     background-size: 100% auto;
 
-    margin: 100px 0;
+    margin: 100px 0 0;
     padding-bottom: 200px;
 
     .titles {

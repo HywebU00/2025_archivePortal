@@ -3,9 +3,7 @@
 
 .statistics{
 
-  margin: 0 auto; padding: 100px 0;
-
-  .blockHeader{ margin-bottom: 30px;}
+  margin: 0 auto; padding: 100px 0 30px;
 
   .chart {
     a {
@@ -59,7 +57,7 @@
 
   @media screen and (min-width: $wwNormal){
 
-    padding: 140px 0 100px;
+    padding-top: 140px;
     background: url(../images/st_bg0.jpg) no-repeat center top;
     background-size:100% auto;
 

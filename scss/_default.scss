@@ -24,9 +24,17 @@ body{
   position: relative; margin: 0 auto;  clear: both;
 
   @media screen and (min-width: $wwNormal){
+    &:has(.topics) {
+      background: url(../images/store_bg.jpg) no-repeat center bottom 300px;
+      background-size: 100% auto;
+    }
   }
 
   @media screen and (min-width: $wwMaximum){
+    &:has(.topics) {
+      background: url(../images/store_bg.jpg) no-repeat center bottom 300px;
+      background-size: 100% 1127px;
+    }
   }
 
 }

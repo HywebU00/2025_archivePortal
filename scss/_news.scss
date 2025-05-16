@@ -62,11 +62,7 @@
     }
   }
 
-  .more{
-    margin-top: 40px;
-    margin-left: 50%;
-    translate: -50% 0;
-  }
+  .more{margin-top: 30px;}
 
   @media screen and (min-width: $wwMedium){
     .newsList {
@@ -99,6 +95,5 @@
       button{word-break: keep-all; white-space: nowrap;}
     }
   }
-
 
 }

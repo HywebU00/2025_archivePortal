@@ -63,13 +63,6 @@
         a{
           padding: 44px 30px 42px 120px;
           box-shadow:rgb(0 0 0 / .2) 0 8px 20px;
-          // &:hover, &:focus {
-          //   box-shadow:rgb(0 0 0 / .4) 0 8px 30px;
-          //   background-color: $white; color: $primaryColor;
-          //   translate: 0 -5px;
-          //   &::after {background-color: $primaryColor;}
-          //   img{filter: brightness(1);}
-          // }
         }
         img{
           top: calc(50% - 36px); left: min(12%, 38px);

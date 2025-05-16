@@ -262,6 +262,8 @@ $(function(){
   var fixHeadThreshold;
   var hh = _webHeader.innerHeight();
 
+  const _sticker = $('.sticker');
+
   if ( ww >= wwNormal) {
     fixHeadThreshold = hh;
   } else {
@@ -273,9 +275,11 @@ $(function(){
       _webHeader.addClass('fixed');
       _body.offset({top: hh});
       $('.goCenter').trigger('blur');
+      _sticker.css('top', _webHeader.innerHeight());
     } else {
       _webHeader.removeClass('fixed');
       _body.removeAttr('style');
+      _sticker.removeAttr('style');
     }
 
     // goTop button 顯示、隱藏
@@ -1135,8 +1139,8 @@ $(function(){
 
   // 文創商品
   // --------------------------------------------------------------- //
-  const _shops = $('.shops').find('.flow');
-  _shops.slick({
+  const _store = $('.store').find('.flow');
+  _store.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplaySpeed: 5000,
@@ -1164,7 +1168,7 @@ $(function(){
   });
 
   // 把向左箭頭搬移到向右箭頭之前（移到 .slick-list 之後）
-  _shops.find('.slick-arrow.slick-prev').insertBefore( _shops.find('.slick-arrow.slick-next'));
+  _store.find('.slick-arrow.slick-prev').insertBefore( _store.find('.slick-arrow.slick-next'));
   // --------------------------------------------------------------- //
 
 

@@ -1,7 +1,7 @@
 // 首頁：文創商品
-// .main>section:not(.shops) { display: none;}
+// .main>section:not(.store) { display: none;}
 
-.shops {
+.store {
   margin: 100px 0;
   .flowItem{
     padding: 20px 3vw; margin: 0 0 30px;
@@ -71,12 +71,15 @@
 
 
   @media screen and (min-width: $wwNormal){
+    margin-bottom: 120px;
 
-    .flow {margin-left: 3vw; margin-right: -20px;}
+    .flow {margin-left: 3vw; margin-right: -20px; }
     .flowItem{
       img{box-shadow: rgb(0 0 0 / .3) 0 0 15px;}
     }
     .slick-dots{ margin-right: 50px;}
+
+    .more{ margin-top: 10px;}
 
   }
 

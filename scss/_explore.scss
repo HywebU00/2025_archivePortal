@@ -2,9 +2,9 @@
 // .main>section:not(.explore) { display: none;}
 
 .explore{
-  margin: 50px auto;
+  margin: 50px auto 100px;
 
-  .blockHeader{ margin-bottom: 15px;}
+  .blockHeader{ margin-bottom: 20px;}
 
   .flowItem{
     padding:0; margin: 0;
@@ -67,12 +67,12 @@
 
   @media screen and (min-width: $wwMedium){
 
-    .flowItem{ // 顯示兩個
+    .flowItem{
       margin: 0 8px;
       transform-origin: bottom;
       transition: .4s;
       &.slick-current{
-        box-shadow:$white 0 0 0 4px, rgb(0 0 0 / .3) 0 0 25px 4px;
+        box-shadow:$white 0 0 0 2px, rgb(0 0 0 / .3) 0 0 25px 4px;
       }
       &:not(.slick-current) {scale:1 .88;}
     }
@@ -80,21 +80,18 @@
     .flow{width: 100%;}
 
     .slick-arrow {
-      &.slick-prev { left: 3vw;}
-      &.slick-next { left: 3vw; }
+      &.slick-prev {left: 3vw;}
+      &.slick-next {left: 3vw;}
     }
-    .slick-dots{ margin-right: 3vw; margin-left: calc(3vw + 184px);}
+    .slick-dots{ margin-right: 3vw; margin-left: calc(3vw + 184px); }
 
   }
-
 
   @media screen and (min-width: $wwNormal){
-
-    .blockHeader{ padding-left: 80px;}
-
+    margin-top: 80px; margin-bottom: 90px;
   }
 
-  
+
   @media screen and (min-width: $wwMaximum){
     .flow {
       width: $wwMaximum;
@@ -102,6 +99,10 @@
     }
   }
   
+}
+
+@media screen and (min-width: $wwNormal){
+ .event + .explore { margin-top: 0;}
 }
 
 // ------------------------------------------------------ //
