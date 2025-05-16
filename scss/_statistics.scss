@@ -15,7 +15,10 @@
         display: block;
         width: 94%; max-width: 740px; margin: 0 auto;
       }
-      &:hover, &:focus {
+      &:hover {
+        img{box-shadow: $primaryColor 0 0 0 1px;}
+      }
+      &:focus-visible {
         img{box-shadow: $primaryColor 0 0 0 3px;}
       }
     }
@@ -34,18 +37,22 @@
     }
   }
 
-
-
   .more{
-    text-align: left; margin: 3em 0 0; padding: 0;
+    margin-left: 0;translate: 0 0;
+    &::before, &::after {border-color: $primaryColor;}
     a{
-      background-color: transparentize($primaryColor, .3);color: $white;
-      box-shadow: $white 0 0 0 1px inset;
-      &:hover, &:focus{
-        background-color: $primaryColor;
+      background-color: $white;color: $primaryColor;
+      text-align: left;
+      line-height: 1.3;
+      padding-top: 16px;
+      &::before {
+        box-shadow: $primaryColor 0 0 0 2px inset;
+      }
+      &:hover{
+        box-shadow: $primaryColor 0 0 0 0, $white 0 0 0 3px;
       }
       &:focus{
-        box-shadow: $white 0 0 0 1px inset,  $white 0 0 0 1px;
+        box-shadow: $primaryColor 0 0 0 1px, $white 0 0 0 4px;
       }
     }
   }
@@ -66,7 +73,7 @@
       }
     }
     article {
-      padding: 190px 20px 120px min(40px, 3vw);
+      padding: 190px 20px 130px min(40px, 3vw);
       margin-left: auto;
       width: 31%; max-width: 396px;
       min-height: 600px;
@@ -79,7 +86,6 @@
   }
 
   @media screen and (min-width: $wwMaximum){
-    // width: $wwMaximum;
     .chart{
       width: $wwMaximum*.69;
       margin-left: calc(50% - $wwMaximum*.5);

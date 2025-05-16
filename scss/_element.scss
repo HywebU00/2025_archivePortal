@@ -84,7 +84,7 @@ kbd {
 // --------------------------------------------------------------- //
 .goTop{
   --tinge: #{$primaryColor};
-  --bg: #{$assistant1};
+  --bg: #{$white};
   --size: 72px;
   --arrowSize : 18px;
 
@@ -94,7 +94,7 @@ kbd {
   padding:0;margin: 0;
   border: none; border-radius: 50%; 
   background-color: var(--bg);
-  box-shadow: rgb(0 0 0 / .3) 0 3px 9px;
+  box-shadow: rgb(0 0 0 / .3) 0 5px 12px 2px;
   transition: all .2s, bottom 1s;
   &::before{
     content: ''; position: absolute;
@@ -107,10 +107,14 @@ kbd {
   }
 
   &:hover, &:focus {
-    box-shadow: var(--tinge) 0 0 0 3px;
+    --tinge: #{$white};
+    --bg: #{$primaryColor};
+    background-color: var(--bg);
   }
-
-  &.show{ bottom: 16px;}
+  &:focus {
+    box-shadow:#fff 0 0 0 1px, var(--bg) 0 0 0 4px;
+  }
+  &.show{ bottom: 20px;}
 
   @media screen and ( min-width: calc($wwMaximum + 408px) ){
     right: calc(50% - $wwMaximum*.5 - var(--size) - 100px - 16px );
@@ -271,9 +275,11 @@ button.searchCtrl{
 // MORE
 // --------------------------------------------------------------- //
 .more{
-  position: relative;
-  margin: 10px 0; padding: 0;
+  display: inline-block;
+  margin: 30px auto 10px 50%;
+  translate: -50% 0;
   text-align: center;
+  font-size: 1rem;
   &::before, &::after {
     content: ''; position: absolute; 
     transition: .3s;
@@ -329,14 +335,14 @@ button.searchCtrl{
 
   // 點點或數字
   .slick-dots { 
-    --tinge: #ccc;
-    --dotSize: 10px;
+    --tinge: #e0dedb;
+    --dotSize: 12px;
     --tingeActive: #{$primaryColor};
     list-style: none; margin:0 auto;padding: 0;
     font-size: 0; text-align: center;
     li { 
       display: inline-block; 
-      margin: 0 2px; padding: 2px;
+      margin: 0 3px; padding: 2px;
       button, span { 
         width: var(--dotSize); height: var(--dotSize); border-radius: 50%;
         overflow: hidden; box-shadow: none;
@@ -347,7 +353,9 @@ button.searchCtrl{
 
       &.slick-active{
         --tinge: #{$primaryColor};
+
         button, span{ 
+          box-shadow:var(--tinge) 0 0 0 2px;
           &:focus{ box-shadow:$white 0 0 0 1px, $primaryColor 0 0 0 3px;}
         }
       }
@@ -366,7 +374,7 @@ button.searchCtrl{
     height: var(--buttonSize);width: var(--buttonSize); 
     border-radius: 50%;
     background-color: var(--bgc);
-    box-shadow: #333 0 0 0 2px;
+    box-shadow: var(--tinge) 0 0 0 2px;
 
     &::before, &::after {
       content: ''; position: absolute;

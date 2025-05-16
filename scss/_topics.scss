@@ -2,14 +2,14 @@
 // .main>section:not(.topics){display: none;}
 
 .topics{
+  padding: 40px 0; margin: 60px 0 0;
   background-color: $primaryColor;
-  padding: 40px 0;
   hgroup {
     width: $mobileWidth; margin: 0 auto 30px;
     text-align: center;
     color: $white;
     .blockHeader{ margin-bottom: 18px;color: $white; }
-    p{ line-height: 1.6; margin: 0; font-size: 1.11rem;}
+    p{ line-height: 1.6; margin: 0; font-size: 1.11rem; text-align: left;}
   }
 
   &>ul{ 
@@ -64,6 +64,11 @@
   }
 
   @media screen and (min-width: $wwNormal){
+
+    margin-top: 150px;
+    clip-path: polygon(0 110px, 34% 0, 68% 110px, 100% 0, 100% 100%, 0 100%);
+
+    hgroup{width: 34%;margin: 0 auto 16px 17%;}
    
     &>ul{
       width: $normalWidth;
@@ -75,9 +80,16 @@
   }
 
   @media screen and (min-width: $wwMaximum){
+
+    clip-path: polygon(0 110px, calc( 50% - $wwMaximum*.16 ) 0, 68% 110px, 100% 0, 100% 100%, 0 100%);
+
+    hgroup{
+      width: $wwMaximum*.34;
+      margin-left: calc(50% - $wwMaximum*.33);
+    }
     &>ul{
       width: $maximumWidth; 
-      &>li{flex:0 0 16.66%;}
+      // &>li{flex:0 0 16.66%;}
     }
   }
 

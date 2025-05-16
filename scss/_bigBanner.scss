@@ -26,8 +26,8 @@
   }
 
   button.slick-arrow{
-    --tinge: #fff;
-    --bgc:rgb(0 0 0 / .5);
+    --tinge: #{$white};
+    --bgc:rgb(0 0 0 / .3);
 
     bottom: 12px;
     &.slick-prev { left: 12px; }
