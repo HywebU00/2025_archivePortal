@@ -195,11 +195,6 @@
     &>.column{
       overflow: hidden;
       margin-bottom: 20px;
-
-      
-      &:nth-child(1) {
-        
-      }
       &:nth-child(2) {
         padding: 5px 0;
         p{ 
@@ -207,36 +202,30 @@
           &+p{ margin-top: 6px;}
         }
       }
-      &:nth-child(3) {
-      }
     }
   }
 
   .iconLinks {
-    // flex: 0 1 88px;
-    outline: 1px dashed #f008;
-    outline-offset: -1px;
-    list-style: none;
-    margin: 0;padding: 0;
+    list-style: none;margin: 0;padding: 0;
     li{
       float: left;
-      margin: 4px; padding: 4px;
+      margin: 0 6px; padding: 0;
       a{ 
-        display: block;
-        width: 46px; height: 46px; border-radius: 50%;
+        display: block; padding: 5px;
+        border-radius: 50%;
         overflow: hidden;
         transition: .2s;
-        box-shadow: $primaryColor 0 0 0 3px;
-
         img{ 
-          display: block; margin:10% auto 0;
-          width: 80%; height: 80%;  object-fit: contain;
+          display: block; margin:0 auto 0;
+          width: 44px; height: 44px;  object-fit: contain;
           border-radius: 50%;
-          outline: 1px dotted #f008;
-          outline-offset: -1px;
         }
-        &:hover, &:focus{}
-        &:focus {}
+        &:hover, &:focus {
+          box-shadow: rgb(0 0 0 / .55) 0 0 8px;
+        }
+        &:focus-visible {
+          box-shadow: #555 0 0 0 3px;
+        }
       }
     }
   }
@@ -273,7 +262,6 @@
         }
         &:focus-visible {
           box-shadow: $primaryColor 0 0 0 1px inset;
-          // &::after{height: 0;}
         }
       }
     }
@@ -298,8 +286,6 @@
  
   @media screen and (min-width: $wwNormal){
     .middle{
-      // flex-wrap: nowrap;justify-content: flex-end;
-
       .textLinks {
         flex: 0 1 calc(90% - 360px);
         max-width: 37em;
@@ -334,10 +320,7 @@
         &:nth-child(2){
           flex: 1 1 60%;
         }
-        &:nth-child(3){
-        }
       }
-
     }
 
     .logoArchives { display: block;}

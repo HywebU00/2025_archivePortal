@@ -2,7 +2,7 @@
 .sticker{
   display: none;
   @media screen and (min-width: $wwNormal){
-    // display: block;
+    display: block;
     position: fixed; top: 250px; right: 0; z-index: 90;
     padding: 8px 12px;
     background-color: rgb(255 255 255 / .8);
@@ -20,15 +20,11 @@
         }
         &.icon{
           &>a{
-            width: 46px; height: 46px;
-            box-shadow: #000 0 0 0 3px; border-radius: 50%;
-            img{height: 100%; }
+            padding: 4px;
+            border-radius: 50%;
+            img{ display: block; width: 44px; height: 44px;}
             &:hover, &:focus {
-              background-color: $primaryColor;
-              box-shadow: /* $primaryColor 0 0 0 3px, $white 0 0 0 5px, */ $primaryColor 0 0 0 8px;
-              img{ 
-                filter: brightness(16);
-              }
+              box-shadow: $grayDark 0 0 0 4px;
             }
           }
 
