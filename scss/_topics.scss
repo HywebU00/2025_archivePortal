@@ -66,6 +66,7 @@
   @media screen and (min-width: $wwNormal){
 
     margin-top: 150px;
+    background:$primaryColor url(../images/topics_bg.jpg) no-repeat left 0 top -132px;
     clip-path: polygon(0 110px, 34% 0, 68% 110px, 100% 0, 100% 100%, 0 100%);
 
     hgroup{width: 34%;margin: 0 auto 16px 17%;}
@@ -82,15 +83,13 @@
   @media screen and (min-width: $wwMaximum){
 
     clip-path: polygon(0 110px, calc( 50% - $wwMaximum*.16 ) 0, 68% 110px, 100% 0, 100% 100%, 0 100%);
+    background-position: left calc(50vw - $wwMaximum*.5) top -132px;
 
     hgroup{
       width: $wwMaximum*.34;
       margin-left: calc(50% - $wwMaximum*.33);
     }
-    &>ul{
-      width: $maximumWidth; 
-      // &>li{flex:0 0 16.66%;}
-    }
+    &>ul{width: $maximumWidth;}
   }
 
 }

@@ -2,13 +2,12 @@
 // --------------------------------------------------------------- //
 .sidebar{
   --color:#{$white};
-  --sidebarBg : #{$primaryColor};
-  --menuHover: #{lighten($primaryColor, 12%)} ;
+  --menuHover: #{darken($primaryColor, 10%)} ;
   --border: rgb(255 255 255 / .25); 
 
   display: none;
   overflow: hidden; overflow-y: scroll;
-  background-color: var(--sidebarBg);
+  background-color: $secondaryColor;
 
   position: fixed; z-index: 991;
   width: $sideBarWidth; height: 100vh;
@@ -21,6 +20,7 @@
   // 行動版側欄主選單
   // ------------------------------------------------------ //
   .menu {
+    background-color: $primaryColor;
     ul{ 
       list-style: none; margin: 0;padding: 0; line-height: 1.4;
       a{ 
@@ -80,14 +80,14 @@
   // 行動版 headNav
   // ------------------------------------------------------ //
   .headNav {
-    --color : #{$white};
+    --color : #{$fontColor};
   
     margin:30px 10px 10px;
   
     &>ul{
       display: flex; flex-flow: row wrap; text-align: center;
       &>li{
-        flex: 0 1 calc(50% - 10px);margin: 5px;
+        flex: 0 1 calc(50% - 10px);margin:8px 5px;
         &>a{
           position: relative;
           padding: .7em .5em  .3em; height: 100%;
@@ -101,11 +101,11 @@
           }
           &:hover, &:focus{
             &::after{
-              height: 3px; background-color: $assistant1;
+              height: 3px; background-color: $primaryColor;
             }
           }
           &:focus{
-            box-shadow: $assistant1 0 0 0 1px inset;
+            box-shadow: $primaryColor 0 0 0 1px inset;
           }
         }
 

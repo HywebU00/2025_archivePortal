@@ -194,7 +194,7 @@
 
     &>.column{
       overflow: hidden;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       &:nth-child(2) {
         padding: 5px 0;
         p{ 
@@ -208,8 +208,7 @@
   .iconLinks {
     list-style: none;margin: 0;padding: 0;
     li{
-      float: left;
-      margin: 0 6px; padding: 0;
+      float: left; margin:8px; padding: 0;
       a{ 
         display: block; padding: 5px;
         border-radius: 50%;
@@ -286,6 +285,7 @@
  
   @media screen and (min-width: $wwNormal){
     .middle{
+      padding-bottom: 0;
       .textLinks {
         flex: 0 1 calc(90% - 360px);
         max-width: 37em;
@@ -313,15 +313,13 @@
       display: flex; justify-content: space-between;
       gap: 3vw;
       &>.column{
-        padding: 5px 0 0;
-        &:nth-child(1){
-          flex: 0 0 190px;
-        }
-        &:nth-child(2){
-          flex: 1 1 60%;
-        }
+        &:nth-child(1){flex: 0 0 190px; padding-top: 16px;}
+        &:nth-child(2){flex: 1 1 60%; padding-top: 16px;}
+        &:nth-child(3){ padding-top: 0;}
       }
     }
+    
+    .iconLinks{overflow: hidden;}
 
     .logoArchives { display: block;}
 
