@@ -466,7 +466,7 @@ button.skip{
 .label{ 
   display: inline-block;
   height: 2.1em; line-height: 2.3em; padding: 0 1em;
-  background-color: $assistant1; color: $primaryColor;
+  background-color: $primaryColor; color: $white;
   &.style1 {background-color: #d74d11; color: $white;}
   &.style2 {background-color: #087c67; color: $white;}  
 }

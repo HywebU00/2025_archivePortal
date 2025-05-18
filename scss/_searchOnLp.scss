@@ -3,7 +3,7 @@
 .searchOnLp {
   @extend %primSecWidth;
   position: relative; padding: 30px 20px;
-  background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
+  // background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
   box-shadow: 0 0 4px 0 rgba(15, 61, 95, 0.2);
 
   &.drawer{
@@ -11,16 +11,14 @@
       position: relative; height: 2em; line-height: 2; width: 100%;
       padding: 0 44px 0 36px; margin: 0; text-align: left;
       font-size: 1.5rem; font-weight: bold;
-      color: $primaryColor; background-color: transparent; 
+      color: $fontColor; background-color: transparent; 
       box-shadow: none; border: none;
       transition: .2s;
 
       &:hover, &:focus{ 
         background-color: $hover;
-        &::before{}
-        &::after {}
       }
-      &:focus {outline: 1px dashed $primaryColor;}
+      &:focus-visible {outline: 2px dotted $primaryColor;}
   
       &::before, &::after{
         content: ''; position: absolute;
@@ -62,12 +60,13 @@
   // }
 
   @media screen and (min-width: $wwNormal){
-    width: $normalWidth; margin: 16px auto 0;
+    // width: $normalWidth; 
+    margin: 16px auto 0;
     .handle {right: 0;}
   }
 
   @media screen and (min-width: $wwMaximum){
-    width: $maximumWidth;
+    // width: $maximumWidth;
   }
 
   // @media screen and (max-width: $wwMedium){

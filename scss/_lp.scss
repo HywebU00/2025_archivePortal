@@ -32,10 +32,11 @@
       border-bottom: 1px solid $borderColor;
       &>a {
         position: relative; padding-left: 3em;
+        transition: .2s;
         &::after {content: ''; display: block; clear: both;}
-        &:hover, &:focus {background-color: $hover;}
+        &:hover{ text-decoration: underline;background-color: $hover;}
         &:focus{
-          p{ text-decoration: underline;}
+          box-shadow: $primaryColor 0 0 0 2px inset;
         }
       }
 
@@ -258,7 +259,7 @@
         display: block; text-decoration: none;
         padding: .7em 16px .6em 22px; height: 100%;
         box-shadow: $borderColor 0 0 0 1px;
-        color: $primaryColor; background-color: $white;
+        color: $fontColor; background-color: $white;
         transition: .2s;
         &:hover, &:focus {
           box-shadow: $white 0 0 0 1px, $primaryColor 0 0 0 3px;
@@ -280,7 +281,7 @@
             width: 0; height: 0;
             border-style: solid;
             border-width: 14px 0 14px 14px;
-            border-color: transparent transparent transparent $assistant1;
+            border-color: transparent transparent transparent $white;
           }
   
         }

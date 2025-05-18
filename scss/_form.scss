@@ -1,6 +1,48 @@
 // ------------------------------------------------------ //
 // 表單元件基本樣式 ------------------------------------- //
 // ------------------------------------------------------ //
+// scss 變數
+
+  // disabled
+  $disColor: #888;
+  $disBg: #f0f0f0;
+  $disBdr: #ddd;
+
+  // readonly
+  $roColor: #555;
+  $roBg: #{$grayLight};
+  $roBdr: #{$borderColor};
+
+
+  // $btnBg: #188eac;
+  $btnColor: #fff;
+  $btnBgHover: #00c0d0;
+  $btnBg2: #ae2783;
+  $btnBg2Hover: #df33f0;
+
+  // disabled
+  $btnDisColor: #888;
+  $btnDisBg: #cfcfcf;
+
+
+// css 變數
+// ------------------------------------------------------ //
+:root {
+  --inputHeight : 2.6em;
+  --inputLineHeight : 2.7;
+
+  // color
+  --inputColor: #{$fontColor};
+  --inputBg: #fff;
+  --inputBgHover: #{$gray};
+  --inputBdr: #{$borderColorLight};
+
+  --btnBg: #{$white};
+  --btnColor: #{$primaryColor};
+
+
+}
+// ------------------------------------------------------ //
 
 form {margin: 0;padding: 0;}
 
@@ -17,51 +59,17 @@ label {
 
 // scss 變數
 // ------------------------------------------------------ //
-$inputBg: #fff;
-$inputColor: #{$primaryColor};
-$inputBdr: #{$primaryColor};
-$inputBgHover: #e7ffff;
+// $inputBg: #fff;
+// $inputColor: #{$primaryColor};
+// $inputBdr: #{$borderColorLight};
+// $inputBgHover: #fec;
 // $inputBdrHover: #888;
 
-// disabled
-$disColor: #888;
-$disBg: #f0f0f0;
-$disBdr: #ddd;
 
-// readonly
-$roColor: #555;
-$roBg: #{$grayLight};
-$roBdr: #{$borderColor};
-
-
-// $btnBg: #188eac;
-$btnColor: #fff;
-$btnBgHover: #00c0d0;
-$btnBg2: #ae2783;
-$btnBg2Hover: #df33f0;
-
-// disabled
-$btnDisColor: #888;
-$btnDisBg: #cfcfcf;
 // ------------------------------------------------------ //
 
 
-// css 變數
-// ------------------------------------------------------ //
-:root {
-  --inputHeight : 2.6em;
-  --inputLineHeight : 2.7;
 
-  // color
-  --inputColor: #{$fontColor};
-  --inputBg: #fff;
-  --inputBgHover: #{$assistant1};
-  --inputBdr: #{$primaryColor};
-
-  --btnBg: #{$white};
-  --btnColor: #{$primaryColor};
-}
-// ------------------------------------------------------ //
 
 
 
@@ -81,15 +89,21 @@ $btnDisBg: #cfcfcf;
   color: var(--inputColor);
   transition: .2s;
 
-  &:hover, &:focus { background-color: $inputBgHover;}
+  // &:hover, &:focus { background-color: var(--inputBgHover);}
+  &:hover{
+    --inputBdr : #{$borderColorDark};
+  }
   &:focus {
-    box-shadow: $inputBdr 0 0 0 2px;
+    box-shadow: $primaryColor 0 0 0 2px;
     border-color: $white;
   }
 
 
   &[disabled]{ 
-    --inputColor: #{$disColor}; --inputBg:#{$disBg}; --inputBdr: #{$disBdr}; 
+    --inputColor: #{$disColor}; 
+    --inputBg:#{$disBg}; 
+    --inputBdr: #{$disBdr}; 
+
     border-style: dashed;
     cursor: not-allowed;
   }
@@ -151,25 +165,29 @@ textarea {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  margin: 5px;
-  padding: 0 32px 0 10px;vertical-align: middle;border-radius: 0;
+  margin: 5px;padding: 0 32px 0 10px;
+  vertical-align: middle;border-radius: 0;
   height: var(--inputHeight); line-height: var(--inputLineHeight);
 
-  border: 1px solid $primaryColor;
+  border: 1px solid var(--inputBdr);
   color: $fontColor;
-  background: $white url(../images/selectArrow.svg) no-repeat right 6px top .8em;
+  background: var(--inputBg) url(../images/selectArrow.svg) no-repeat right 6px top .8em;
   background-size: 24px auto;
   transition: .2s;
 
   cursor: pointer;
 
-  &:hover, &:focus { background-color: $inputBgHover;}
+  // &:hover, &:focus { background-color: var(--inputBgHover);}
   &:focus {
-    box-shadow: $inputBdr 0 0 0 2px;
+    box-shadow: $primaryColor 0 0 0 2px;
     border-color: $white;
   }
+
   &[disabled]{ 
-    --inputColor: #{$disColor}; --inputBg:#{$inputBg}; --inputBdr: #{$disBdr};
+    --inputColor: #{$disColor}; 
+    --inputBg: #{$disBg}; 
+    --inputBdr: #{$disBdr};
+
     box-shadow: none;
     cursor: not-allowed;
   }
@@ -213,7 +231,7 @@ input[type="reset"] {
     border-color: $primaryColor;
     color: $primaryColor;
   }
-  &:focus{ box-shadow: $inputBdr 0 0 0 3px;}
+  &:focus{ box-shadow: var(--inputBdr) 0 0 0 3px;}
 
   &[disabled] { --btnBg: #{$btnDisBg}; --btnColor: #{$btnDisColor}; cursor: not-allowed;}
 }
