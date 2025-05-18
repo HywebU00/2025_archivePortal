@@ -1,10 +1,1 @@
-<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_17_1169)">
-<path d="M10 8.75V13.75L2.5 7.5L10 1.25V6.25H16.25C18.9022 6.25 21.4457 7.30357 23.3211 9.17893C25.1964 11.0543 26.25 13.5978 26.25 16.25C26.25 18.9022 25.1964 21.4457 23.3211 23.3211C21.4457 25.1964 18.9022 26.25 16.25 26.25H5V23.75H16.25C18.2391 23.75 20.1468 22.9598 21.5533 21.5533C22.9598 20.1468 23.75 18.2391 23.75 16.25C23.75 14.2609 22.9598 12.3532 21.5533 10.9467C20.1468 9.54018 18.2391 8.75 16.25 8.75H10Z" fill="#0F3D5F"/>
-</g>
-<defs>
-<clipPath id="clip0_17_1169">
-<rect width="30" height="30" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?><svg id="_圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30"><defs><style>.cls-1{fill:none;}.cls-2{fill:#444;}.cls-3{clip-path:url(#clippath);}</style><clipPath id="clippath"><rect class="cls-1" width="30" height="30"/></clipPath></defs><g class="cls-3"><path class="cls-2" d="M11,9.75v5l-7.5-6.25,7.5-6.25v5h6.25c2.65,0,5.2,1.05,7.07,2.93,1.88,1.88,2.93,4.42,2.93,7.07s-1.05,5.2-2.93,7.07c-1.88,1.88-4.42,2.93-7.07,2.93H6v-2.5h11.25c1.99,0,3.9-.79,5.3-2.2,1.41-1.41,2.2-3.31,2.2-5.3s-.79-3.9-2.2-5.3c-1.41-1.41-3.31-2.2-5.3-2.2h-6.25Z"/></g></svg>
