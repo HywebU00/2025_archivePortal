@@ -448,19 +448,11 @@ $(function(){
   // --------------------------------------------------------------- //
   var _fatFootCtrl = $('.fatFootCtrl');
   var _footSiteTree = $('.fatFooter').find('.siteTree>ul>li>ul');
-  // const text1 = _fatFootCtrl.text(); // 收合
-  // const text2 = _fatFootCtrl.attr('data-altText'); // 開啟
 
   _fatFootCtrl.attr('aria-label', '導覽選單').removeAttr('data-alttext');
 
   _footSiteTree.is(':hidden') ? _fatFootCtrl.addClass('closed').attr('aria-expanded', false) :  _fatFootCtrl.removeClass('closed').attr('aria-expanded', true);
 
-  // if ( _footSiteTree.is(':hidden') ) {
-  //   _fatFootCtrl.addClass('closed').attr('aria-expanded', false);
-  // } else {
-  //   _fatFootCtrl.removeClass('closed').attr('aria-expanded', true);
-  // }
-  
   _fatFootCtrl.on( 'click', function(){
     if ( _footSiteTree.is(':visible') ) {
       _footSiteTree.slideUp(400, function(){
@@ -477,10 +469,8 @@ $(function(){
   // 回到頁面頂端 Go Top
   // --------------------------------------------------------------- //
   _goTop.on( 'click', function(){
-    // const hrefText = window.location.href.split('#')[0];
     _html.stop(true,false).animate({scrollTop: 0}, 800, function(){
       _goCenter.trigger('focus');
-      // history.replaceState(null, null, hrefText);
     });
   });
 
@@ -982,45 +972,6 @@ $(function(){
   // --------------------------------------------------------------- //
 
 
-  // 改變瀏覽器寬度 window resize 
-  // --------------------------------------------------------------- //
-  var winResizeTimer;
-  _window.resize(function () {
-    clearTimeout(winResizeTimer);
-    winResizeTimer = setTimeout( function () {
-
-      wwNew = _window.width();
-      
-      // 由小螢幕到寬螢幕
-      if( ww < wwNormal && wwNew >= wwNormal ) {
-        if (_sidebar.hasClass('reveal')) {
-          _sidebar.removeClass('reveal');
-          _sidebarCtrl.removeClass('closeIt');
-          _sidebarMask.hide();
-          _body.removeClass('noScroll');
-        }
-
-        _body.removeAttr('style');
-        _webHeader.removeClass('fixed');
-        _search.removeClass('reveal').removeAttr('style')
-        hh = _webHeader.outerHeight();
-        fixHeadThreshold =  hh - _menu.innerHeight();
-        _window.trigger('scroll');
-      }
-
-      // 由寬螢幕到小螢幕
-      if( ww >= wwNormal && wwNew < wwNormal ){
-        hh = _webHeader.outerHeight();
-        fixHeadThreshold = 0;
-        _body.removeAttr('style');
-        if ( ! _webHeader.hasClass('mp') ) {
-          _window.trigger('scroll');
-        }
-      }
-      ww = wwNew;
-    }, 200);
-  });
-  // window resize  end -------------------------------------------- //
   
 
 
@@ -1028,15 +979,19 @@ $(function(){
   // ----------------- 外掛套件 slick 參數設定 --------------------- //
   // --------------------------------------------------------------- //
 
+  // 【暫停／輪播】按鈕元件
+  const ppButton = '<button class="pausePlay" aria-label="暫停輪播" data-altLabel="繼續輪播"></button>';
+
   // 首頁大圖輪播
   // --------------------------------------------------------------- //
   const _bbImages = $('.bigBanner').find('.bbImages');
+  _bbImages.before(ppButton); // 加入【暫停／輪播】按鈕
   _bbImages.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplaySpeed: 5000,
     speed: 1000,
-    autoplay: false,
+    autoplay: true,
     arrows: true,
     dots: true,
     fade: true,
@@ -1051,12 +1006,13 @@ $(function(){
   // 探索國家故事
   // --------------------------------------------------------------- //
   const _exploreFlow = $('.explore').find('.flow');
+  _exploreFlow.before(ppButton);  // 加入【暫停／輪播】按鈕
   _exploreFlow.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 500,
     speed: 800,
-    autoplay: false,
+    autoplay: true,
     arrows: true,
     dots: true,
     fade: false,
@@ -1090,7 +1046,7 @@ $(function(){
 
 
 
-  // 近期活動 EVENTS
+  // 展覽與活動 EVENTS
   // --------------------------------------------------------------- //
   const _eventPoster = $('.events').find('.images');
   const _eventTitle = $('.events').find('.titles');
@@ -1233,10 +1189,42 @@ $(function(){
   })
 
   _photoShow.append('<div class="total">' + phsLength +'</div>');
-
-
-
   // --------------------------------------------------------------- //
+
+
+  // slick 【暫停／輪播】按鈕功能
+  // --------------------------------------------------------------- //
+  var _pausePlay = $(".pausePlay");
+  _pausePlay.each(function () {
+    let _thisPP = $(this);
+    const labelText0 = _thisPP.attr('aria-label');
+    const labelText1 = _thisPP.attr('data-altLabel');
+    _thisPP.on('click', function () {
+      _thisPP.hasClass('paused')
+        ? _thisPP
+          .removeClass('paused').attr('aria-label', labelText0)
+          .next().slick('slickPlay')
+        : _thisPP
+          .addClass('paused').attr('aria-label', labelText1)
+          .next().slick('slickPause');
+    });
+  });
+  // --------------------------------------------------------------- //
+
+
+  // const _explorePPbutton = _exploreFlow.prev('.pausePlay');
+  // function resetPPbutton() {
+  //   if (_explorePPbutton.hasClass('paused')) {
+  //     _explorePPbutton.removeClass('paused').attr('aria-label', '暫停輪播');
+  //   }
+  // }
+
+
+
+
+
+
+
 
   // 圖書內容頁 *** 未完 ***
   // --------------------------------------------------------------- //
@@ -1270,10 +1258,6 @@ $(function(){
   // --------------------------------------------------------------- //
 
 
-
-
-
-  
   // --------------------------------------------------------------- //
   // --------------- 外掛套件 slick 參數設定 END ------------------- //
   // --------------------------------------------------------------- //
@@ -1298,4 +1282,58 @@ $(function(){
 			}
 		})
 	})
+
+
+  // 改變瀏覽器寬度 window resize 
+  // --------------------------------------------------------------- //
+  var winResizeTimer;
+  _window.resize(function () {
+    clearTimeout(winResizeTimer);
+    winResizeTimer = setTimeout( function () {
+  
+      wwNew = _window.width();
+      
+      // 由小螢幕到寬螢幕
+      if( ww < wwNormal && wwNew >= wwNormal ) {
+        if (_sidebar.hasClass('reveal')) {
+          _sidebar.removeClass('reveal');
+          _sidebarCtrl.removeClass('closeIt');
+          _sidebarMask.hide();
+          _body.removeClass('noScroll');
+        }
+  
+        _body.removeAttr('style');
+        _webHeader.removeClass('fixed');
+        _search.removeClass('reveal').removeAttr('style')
+        hh = _webHeader.outerHeight();
+        fixHeadThreshold =  hh - _menu.innerHeight();
+        _window.trigger('scroll');
+      }
+  
+      // 由寬螢幕到小螢幕
+      if( ww >= wwNormal && wwNew < wwNormal ){
+        hh = _webHeader.outerHeight();
+        fixHeadThreshold = 0;
+        _body.removeAttr('style');
+        if ( ! _webHeader.hasClass('mp') ) {
+          _window.trigger('scroll');
+        }
+  
+         _exploreFlow.prev('.pausePlay').removeClass('paused');
+      }
+  
+      // 螢幕寬度跨過斷點 wwMedium(700) , wwNormal(1000) , wwMaximum(1280)
+      // 處理「探索國家檔案故事」的暫停輪播按鈕狀態
+      // ------------------------
+
+      ww = wwNew;
+    }, 200);
+  });
+  // window resize  end -------------------------------------------- //
+
+
+
 })
+
+
+

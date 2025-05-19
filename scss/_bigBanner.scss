@@ -40,6 +40,14 @@
     translate: -50% calc(-100% - 20px);
   }
 
+  // 輪播暫停、繼續 button
+  .pausePlay{
+    translate: 0 -110%; opacity: 0;
+    transition: .3s;
+    &:focus {opacity: 1; translate:  0 0;}
+    &.paused {translate:  0 0;}
+  }
+
   @media screen and (min-width: $wwNormal ){
     button.slick-arrow{
       opacity: 0;
@@ -53,8 +61,7 @@
   @media screen and (min-width: $wwMaximum){
 
     width: $wwMaximum; margin: 0 auto; 
-    
-  
+
     // 圖片區
     .bbImages{
       .flowItem img{ width: $wwMaximum;}

@@ -547,6 +547,7 @@ button.skip{
 
 
 // 模擬 button 元件
+// --------------------------------------------------------------- //
 .button{
   margin: 30px 0 50px;
   &.center{text-align: center;}
@@ -570,3 +571,51 @@ button.skip{
   }
 
 }
+// --------------------------------------------------------------- //
+
+
+
+// 控制輪播暫停、繼續 button
+// --------------------------------------------------------------- //
+button.pausePlay {
+  --bg: rgb(0 0 0 / .5);
+  --tinge: #fff;
+
+  position: absolute;z-index: 99;
+  width: 56px; height: 56px; border-radius: 50%;
+  padding: 0; margin: 5;
+  background-color: var(--bg);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: .2s;
+  &:focus, &:hover{ 
+    background: var(--bg);
+    box-shadow: var(--tinge) 0 0 0 1px, var(--bg) 0 0 0 4px;
+  }
+  &::before, &::after {content: ''; position: absolute;}
+  &::before {
+    top: calc(50% - 8px); left: calc(50% - 8px);
+    width: 5px; height: 16px;
+    background-color: var(--tinge);
+    box-shadow:  var(--tinge) 11px 0 0 0;
+  }
+  &::after {
+    display: none;
+    top: calc(50% - 10px); left: calc(50% - 4px);
+    width: 1px; height: 1px;
+    border-style: solid;
+    border-width: 10px 0 10px 12px;
+    border-color: transparent transparent transparent var(--tinge);
+  }
+  &.paused{
+    --bg: #{$primaryColor};
+    --bgHover: #{$primaryColor};
+
+    opacity: 1;
+    &::before{ display: none; }
+    &::after{ display: block; }
+  }
+}
+// --------------------------------------------------------------- //

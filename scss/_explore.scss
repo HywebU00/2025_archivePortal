@@ -2,6 +2,7 @@
 // .main>section:not(.explore) { display: none;}
 
 .explore{
+  position: relative;
   margin: 50px auto 100px;
 
   .blockHeader{ margin-bottom: 20px;}
@@ -64,6 +65,12 @@
     margin: 60px 10px 10px 170px;
   }
 
+  .pausePlay {
+    opacity: .4; left: 3vw; top: 10px;
+    &:hover, &:focus{
+      opacity: 1;
+    }
+  }
 
   @media screen and (min-width: $wwMedium){
 
@@ -85,6 +92,8 @@
     }
     .slick-dots{ margin-right: 3vw; margin-left: calc(3vw + 184px); }
 
+    .pausePlay { top: 50px;}
+
   }
 
   @media screen and (min-width: $wwNormal){
@@ -97,6 +106,9 @@
       width: $wwMaximum;
       .slick-list { margin-left: 50px; }
     }
+
+    .pausePlay { left: calc(50vw - $wwMaximum*.5 + 50px) ;}
+
   }
   
 }
