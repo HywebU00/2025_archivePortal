@@ -15,6 +15,8 @@ $(function(){
   const _webHeader = $('.webHeader');
   const _menu = _webHeader.find('.menu'); // 寬版主選單
   const _goTop = $('.goTop');
+  const _goCenter = $('.goCenter');
+
 
   // _html.removeClass('no-js');
 
@@ -274,7 +276,7 @@ $(function(){
     if (_window.scrollTop() > fixHeadThreshold ) {
       _webHeader.addClass('fixed');
       _body.offset({top: hh});
-      $('.goCenter').trigger('blur');
+      _goCenter.trigger('blur');
       _sticker.css('top', _webHeader.innerHeight());
     } else {
       _webHeader.removeClass('fixed');
@@ -477,7 +479,7 @@ $(function(){
   _goTop.on( 'click', function(){
     // const hrefText = window.location.href.split('#')[0];
     _html.stop(true,false).animate({scrollTop: 0}, 800, function(){
-      $('.goCenter').trigger('focus');
+      _goCenter.trigger('focus');
       // history.replaceState(null, null, hrefText);
     });
   });

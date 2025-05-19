@@ -62,7 +62,7 @@ kbd {
 
   display: none;
   @media screen and (min-width: $wwNormal) {
-    display: block; z-index: 880;
+    display: block; z-index: 881;
     position: fixed; top: -2.2em; left: 50px;
     padding: 0 .5em; border-radius: 0 0 4px 4px;
     overflow: hidden;
