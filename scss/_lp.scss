@@ -92,7 +92,10 @@
   }
 
   thead{
-    background-color: $primaryColor; color: $white;
+    // background-color: $primaryColor; color: $white;
+    background-color: $grayDark; color: $white;
+    border-bottom: 3px solid $borderColorDark;
+    tr, th{border: none;}
     th{ white-space: nowrap;}
   }
 
@@ -108,8 +111,12 @@
     border-bottom: 1px solid $borderColor;
     tr{
       transition: background .2s;
-      &:nth-child(even) { background-color: $grayLight;}
-      &:hover{ background-color: $assistant1;}
+      &:hover{
+        box-shadow:$borderColor 0 0 0 1px inset, rgb(0 0 0 / .2) 0 0 4px 1px inset;
+      }
+      &:nth-child(even) { 
+        background-color: $grayLight;
+      }
     }
   }
 
@@ -126,7 +133,7 @@
     }
     &.title { font-size: 1.125em; text-align: left; }
     a{
-      color: $primaryColor; text-decoration: underline; transition: .2s;
+      color: $fontColor; text-decoration: underline; transition: .2s;
       &:hover, &:focus{text-decoration: none;}
       
       // 檔案格式圖示
@@ -137,6 +144,14 @@
           color: $white;
         }
         &:only-child { margin: 0 auto;}
+      }
+    }
+    &>a{
+      &:only-child {
+        display: block;
+        &:focus {
+          outline: 2px solid $primaryColor;
+        }
       }
     }
     time{ display: inline-block; white-space: nowrap; }

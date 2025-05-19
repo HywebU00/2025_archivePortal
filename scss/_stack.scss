@@ -26,13 +26,17 @@
 
       p{ 
         margin: 0 6px;
-        a{ color: $primaryColor;}
+        a{ color: $fontColorDark;}
         &.title{ 
           font-size: 1.2em; font-weight: bold; 
-          overflow: hidden;
-          display: -webkit-box; 
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
+          a{
+            display: -webkit-box; 
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            &:hover{ text-decoration: underline;}
+            &:focus {box-shadow: $primaryColor 0 0 0 2px; text-decoration: none;}
+          }
         }
         &.description {
           margin: 30px 6px 20px;
@@ -41,13 +45,15 @@
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 3;
           overflow: hidden;
+          &:has( ~ .more) {padding-bottom: 25px;}
         }
       }
-     
       .info{
         margin:24px 6px 5px; padding: 0;
         abbr{ text-decoration: none; margin: 0 3px;}
       }
+
+      .more{ left: auto; right: 0; translate: 0 0; }
     }
   }
 
