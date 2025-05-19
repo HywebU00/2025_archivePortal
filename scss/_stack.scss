@@ -32,6 +32,7 @@
           a{
             display: -webkit-box; 
             -webkit-box-orient: vertical;
+            line-clamp: 3;
             -webkit-line-clamp: 3;
             overflow: hidden;
             &:hover{ text-decoration: underline;}
@@ -43,6 +44,7 @@
           text-align: justify;
           display: -webkit-box;
           -webkit-box-orient: vertical;
+          line-clamp: 3;
           -webkit-line-clamp: 3;
           overflow: hidden;
           &:has( ~ .more) {padding-bottom: 25px;}
