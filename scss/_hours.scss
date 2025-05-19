@@ -17,12 +17,14 @@
     .title{ margin-left: 10px;white-space: nowrap;}
   }
 
-  .data{
+  .dayHour{
     flex: 0 0 50%;
     padding: 20px;
     line-height: 1.5; font-size: 1.125em;
     background-color: $primaryColor;
     color: $fontInvert;
+
+    display: flex; align-items: center; justify-content: center;
   }
 
   .moreInfo{
@@ -60,7 +62,7 @@
       background-color: transparent;
       .title{margin: 0 20px;}
     }
-    .data{ flex: 0 0 22%; padding: 30px;}
+    .dayHour{ flex: 0 0 22%; padding: 30px;}
     .moreInfo {
       flex: 0 0 55%;
       justify-content: center;

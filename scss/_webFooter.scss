@@ -86,6 +86,7 @@
       &>a{
         position: relative; 
         padding: 0 0 4px;
+        font-weight: bold;
         &::after{
           content: ''; position: absolute; left: 0; right: 0; bottom: 0;
           height: 0; background-color: $primaryColor;
@@ -100,7 +101,7 @@
       &>ul{
         display: none;
         margin-bottom: 3em; padding-top: .5em;
-        font-size: .83em;
+        font-size: .875em;
         
         &>li{
           margin: .4em 0;

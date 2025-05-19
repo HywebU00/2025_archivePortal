@@ -48,6 +48,14 @@
     &.paused {translate:  0 0;}
   }
 
+  &:hover{
+    .pausePlay{ 
+      translate: 0 0;
+      &:not(.paused){ opacity: .5; }
+      &:hover{ opacity: 1;}
+    }
+  }
+
   @media screen and (min-width: $wwNormal ){
     button.slick-arrow{
       opacity: 0;

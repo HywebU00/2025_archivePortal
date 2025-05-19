@@ -32,7 +32,7 @@
         transition: .2s;
         &>a{
           padding:.7em 1vw .7em; white-space: nowrap;
-          text-align: center;
+          text-align: center; font-weight: bold;
           transition: .2s;
           &:focus, &:hover {background-color: $primaryColor;color: $fontInvert;}
         }
