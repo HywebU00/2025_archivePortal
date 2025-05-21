@@ -641,6 +641,11 @@ $(function(){
     let _showHideItems = $(this).children('ul').children('li');
     let _ctrlBtn = _showHideItems.find('.ctrlBtn');
     let _answer = _showHideItems.find('.a');
+    const text1 = "展開";
+    const text2 = "收合";
+
+    _ctrlBtn.attr('aria-expanded', false);
+    _answer.filter(':visible').prev().find('.ctrlBtn').attr('aria-expanded', true).addClass('closeIt').text(text2);
 
     _ctrlBtn.click(function () {
       let _this = $(this);
@@ -648,12 +653,12 @@ $(function(){
       let _thisA = _thisQ.next();
       if ( _thisA.is(':visible')) {
         _thisA.slideUp(400);
-        _this.removeClass('closeIt').attr('aria-expanded', false);
+        _this.removeClass('closeIt').attr('aria-expanded', false).text(text1);
       } else {
-        _ctrlBtn.removeClass('closeIt');
         _answer.not(_thisA).slideUp(400);
         _thisA.slideDown(400);
-        _this.addClass('closeIt').attr('aria-expanded', true);
+        _ctrlBtn.not(_this).removeClass('closeIt').attr('aria-expanded', false).text(text1);
+        _this.addClass('closeIt').attr('aria-expanded', true).text(text2);
       }
     });
   });
@@ -731,6 +736,9 @@ $(function(){
     let i = 0;
     let j;
     let _dots = '';
+
+    // 移動 arrow button 位置
+    _btnLeft.prependTo(_floxBox);
 
     // 產生 indicator 和 自訂屬性 data-index
     _floxBox.append('<div class="flowNav"><ul></ul></div>');

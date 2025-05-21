@@ -20,15 +20,25 @@
       margin:0 12px 12px 0;
       &:nth-child(2n){margin-right: 0;}
       a {
+        position: relative;
+        display: block; 
         padding: 1em .5em; height: 100%;
-        @extend %gradient1;
-        display: block; text-decoration: none;
-        color: $primaryColor;
-        transition: .25s;
+        background-color: $white;color: $fontColorDark;
+        box-shadow: $shadow2 0 4px 8px -2px;
+        text-decoration: none;
+        transition: .15s;
+        &::after {
+          content: ''; position: absolute;
+          left: 0; right: 0; bottom: 0;
+          height: 3px;
+          background:$primaryColor;
+          transition: .2;
+        }
         &:hover, &:focus {
-          background-image: none;
-          background-color: $assistant1;
-          box-shadow: none;
+          box-shadow:$primaryColor 0 0 0 1px;
+          &::after {
+            height: 5px;
+          }
         }
       }
     }

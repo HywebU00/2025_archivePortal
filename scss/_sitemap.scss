@@ -44,8 +44,8 @@
         position: relative;
         text-decoration: none;display: block; color: $fontColor;
         padding: .6em 2px 0; margin: 0;
-        &:hover, &:focus{color: $linkColor;}
-        &:focus{ box-shadow:$primaryColor 0 0 0 1px inset ;}
+        &:hover, &:focus{color: $fontColorDark;}
+        &:focus{ box-shadow:$primaryColor 0 0 0 2px;}
       }
       .numb{ display: inline-block;}
     }
@@ -72,7 +72,7 @@
           }
 
           &:hover, &:focus{
-            &::after{ height: 4px; background-color: $linkColor;}
+            &::after{ height: 4px; background-color: $primaryColor;}
           }
         }
         li{margin:2px 0 2px;}
@@ -87,15 +87,14 @@
               background-color: $borderColorLight;
               transition: .15s;
             }
-            &:hover::after{background-color: $linkColor; bottom: 2px; }
-            &:focus::after{background-color: $linkColor; bottom: 0;}
+            &:hover::after{background-color: $primaryColor; bottom: 2px; }
+            &:focus::after{background-color: transparent; bottom: 0;}
           }
 
           // 第二層
           &>li{
             &>a{
-              padding-left: 2.4em; 
-              // &::before{ width: 6px;height: 6px; top: 1.2em;}
+              padding-left: 2.4em;
               .numb{min-width: 2.4em;margin-left: -2.4em;}
             }
 

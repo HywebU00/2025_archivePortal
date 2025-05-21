@@ -18,7 +18,7 @@ button.arrowBtn {
 
   &::before {
     content: ''; position: absolute;
-    top: calc(50% - 8px);
+    top: calc(50% - 6px);
     width: 12px; height: 12px;
     border: 3px solid var(--color); 
     transform: rotate(45deg);
@@ -39,8 +39,8 @@ button.arrowBtn {
   }
 
   &:hover, &:focus{
-    --btnBg: #{$assistant1};
-    --color: #{$primaryColor};
+    --btnBg: #{$primaryColor};
+
     box-shadow: var(--btnBg) 0 0 0 4px;
   }
 
@@ -133,7 +133,7 @@ button.arrowBtn {
         }
         &:focus {
           p{ transition: none;}
-          &::before{ box-shadow: $primaryColor 0 0 0 2px inset;}
+          &::before{ box-shadow: $borderColorDark 0 0 0 2px inset;}
         }
       }
       img{

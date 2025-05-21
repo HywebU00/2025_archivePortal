@@ -11,18 +11,22 @@
     a {
       display: block; position: relative; text-decoration: none;
       padding: .7em 1em .6em 24px;
-      border: 1px solid transparent;
-      color: $primaryColor; background-color: $white;
-      box-shadow: rgb(0 0 0 / .25) 1px 1px 6px;
+      border: 1px solid $borderColorLight;
+      color: $fontColor; background-color: $white;
+      box-shadow:$primaryColor 0 0 0 0 inset, $shadow1 1px 1px 6px;
       transition: .2s;
       &::before {
         content: ''; position: absolute; left: -1px; top: -1px; bottom: -1px;
-        width: 8px; background-color: $borderColor;
+        width: 8px; background-color: $primaryColor;
         transition: .2s;
       }
       &:hover, &:focus {
+        border-color: $borderColorDark;
+        &::before {width: 12px;}
+      }
+      &:focus-visible {
+        box-shadow: $primaryColor 0 0 0 1px inset, $shadow1 1px 1px 6px;
         border-color: $primaryColor;
-        &::before { background-color: $primaryColor; }
       }
     }
   }

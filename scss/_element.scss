@@ -326,7 +326,6 @@ button.searchCtrl{
 // --------------------------------------------------------------- //
 .slick-slider {
   position: relative;
-  // width: 70vw; height: 40vh;
 
   button {
     border: none;outline: none;box-shadow: none;
@@ -366,7 +365,7 @@ button.searchCtrl{
   // 左右箭頭
   button.slick-arrow {
     --buttonSize: 68px;
-    --bgc: transparent;
+    --bgc: rgb(255 255 255 / .7);
     --tinge: #333;
  
     position: absolute; z-index: 9; 
@@ -421,8 +420,8 @@ button.searchCtrl{
 // --------------------------------------------------------------- //
 button.closeThis{
   --width:48px;
-  --bar-length:28px;
-  --bar-thick:4px;
+  --bar-length:24px;
+  --bar-thick:2px;
 
   position: relative;
   height: var(--width); width:  var(--width); padding: 0; margin: 0;
@@ -442,8 +441,11 @@ button.closeThis{
   &::after{transform: rotate(-45deg);}
 
   &:hover, &:focus { 
-    background-color: $assistant1;
-    &::before, &::after{ background-color: $primaryColor;}
+    background-color: $primaryColor;
+    &::before, &::after{ background-color: $white;}
+  }
+  &:focus{
+    box-shadow: #fff 0 0 0 1px, $primaryColor 0 0 0 3px;
   }
 }
 

@@ -3,7 +3,7 @@
   h3{
     position: relative;padding:0 0 6px 24px; margin: 0;
     font-size: 1.3em;  line-height: 1.2;
-    border-bottom: 3px solid $primaryColor;
+    border-bottom: 3px solid $borderColor;
     &::before {
       content: '';position: absolute; left: 0; top: 4px;
       width: 9px; height: 1em;
@@ -30,20 +30,6 @@
   }
 }
 
-// h4{
-//   font-weight: bold; font-size: 1.3em; line-height: 1.4;
-//   margin: 2.5em 0 .8em; padding: 0 0 0 24px;
-//   position: relative;
-//   &::before{
-//     content: ''; position: absolute; left: 0; top: .15em;
-//     width: 9px; height: 1em;
-//     background-color: $primaryColor;
-//   }
-
-//   &+.tbStyle1, &+.tbStyle2{
-//     margin-top: 0;
-//   }
-// }
 // ------------------------------------------------------ //
 
 
@@ -62,11 +48,13 @@
           transition: .15s;
         }
         &:hover, &:focus{
-          color: $linkColor;
-          &::after{background-color: $primaryColor;}
+          color: $fontColorDark;
+          &::after{background-color: $borderColorDark; height: 2px;}
         }
-        &:focus{
-          &::after{height: 2px;}
+        &:focus-visible{
+          outline: 2px solid $primaryColor;
+          outline-offset: -2px;
+          &::after{background-color: transparent;}
         }
       }
     }
@@ -107,7 +95,7 @@
         outline: none;
         .fileSize{text-decoration: underline;}
       }
-      &:focus{box-shadow: $linkColor 0 0 0 1px inset;outline: none;}
+      &:focus-visible{box-shadow: $primaryColor 0 0 0 2px inset;outline: none;}
     }
     .fileType{ display: inline-block; vertical-align: middle; margin-right: 4px;}
   }

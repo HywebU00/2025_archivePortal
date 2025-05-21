@@ -1,26 +1,31 @@
 // 內文錨點
 .cpAnchors{
-  margin: 0 0 30px;
+  margin: 0 0 40px;
   font-size: 1.11em;
-  &>ul, &>ol{ list-style: none; overflow: hidden; margin: 0 -8px;padding: 0;}
+  &>ul, &>ol{ list-style: none; margin: 0 -8px;padding: 0;
+    &::after {
+      content: ''; display: block; clear: both;
+    }
+  }
   li{
     float: left; line-height: 1; margin:5px;
-    a{
+    &>a{
       display: block;padding: 1em 1.2em;
       text-decoration: none;
       @extend %gradient1;
       color: $fontColor; font-weight: bold;
-      border: 1px solid #e2e2e2;
+      box-shadow:$borderColorLight 0 0 0 1px inset, $shadow1 0 2px 5px;
+      transition: .15s;
       &:hover, &:focus {
-        border-color: #B9E7E5;
-        @extend %gradient2;
+        box-shadow:$primaryColor 0 0 0 2px inset, $shadow1 0 10px 10px -3px;
+        outline: none;
+        translate: 0 -2px;
       }
     }
   }
 
   @media screen and (min-width: $wwNormal){
-    margin-bottom: 50px;
-    li{ margin:10px;}
+    margin-bottom: 40px;
   }
 }
 .cpArticle .cpAnchors {font-size: 1em;}

@@ -47,7 +47,7 @@ $radius: 16px; // 圓角半徑
 // $primaryColor:#0F3D5F;
 $primaryColor:#a2231c;
 $secondaryColor: #edebe8;
-$assistant1: #fff4b7;
+$assistant1: #efbd33;
 $hilight : #ef460e;
 $warning: #ca0956;
 $hover: #f6f3f2;
@@ -57,36 +57,29 @@ $fontColorLight: #666;
 $fontColorPale: #888;
 $fontColorDark: #000;
 $fontInvert: #fff;
-$linkColor: $primaryColor;
+$linkColor: #004e72;
 $mainBg: #fff;
 
-$borderColor: #cac0c0;
-$borderColorLight: #e0d9d9;
-$borderColorDark:#413d3d;
-$shadow1:rgba(15 61 95 / .2);
-$shadow2:rgba(15 61 95 / .5);
+$borderColor: #cec8c8;
+$borderColorLight: #e3dfdf;
+$borderColorDark:#443939;
+$shadow1:rgba(64, 57, 51, 0.2);
+$shadow2:rgba(68, 52, 42, 0.5);
 
 $white: #fff;
 $black: #000;
-// $gray: #d3d5d6; 
-// $grayLight: #f4f6f9;
 $gray: #dedcd9;
 $grayLight: #f2f0ef;
 $grayDark: #767370;
 
 
 %gradient1 {
-  background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #f5efeb 0%, #f8f5f1 9.38%, #FFFFFF 100%);
   box-shadow: 0 0 4px $shadow1;
 }
 %gradient2 {
-  background: linear-gradient(180deg, #C7F7F2 0%, #EAFFFD 100%)  right 0 top 0;
+  background: linear-gradient(180deg, #f6e5cf 0%, #fcf7ea 100%)  right 0 top 0;
   box-shadow: 0 0 4px 0 rgba(15, 61, 95, 0.2);
 }
 
-// $btnBg1: $primaryColor;
-// $btnBg2: #01425c;
-
-// $footBg: $primaryColor;
-// $sidebarBg: $grayDark;
 // ---------------------------------------------------------------- //
