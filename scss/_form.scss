@@ -216,30 +216,40 @@ input[type="reset"] {
   -webkit-appearance: none;
   -moz-appearance: none;
     
-  border: 1px solid $primaryColor;
+  border: none;
   padding:0 1em; margin:5px; border-radius: 0;
   vertical-align: middle;
   cursor: pointer; transition: .2s;
 
   height: var(--inputHeight); line-height: var(--inputHeight);
 
-  background-color: $primaryColor; color: $white;
-  // box-shadow: $inputBdr 0 0 0 1px;
 
-  &:hover, &:focus {
-    background-color: $assistant1;
-    border-color: $primaryColor;
-    color: $primaryColor;
+  &[disabled] {
+    --btnBg: #{$btnDisBg};
+    --btnColor: #{$btnDisColor};
+    cursor: not-allowed;
   }
-  &:focus{ box-shadow: var(--inputBdr) 0 0 0 3px;}
-
-  &[disabled] { --btnBg: #{$btnDisBg}; --btnColor: #{$btnDisColor}; cursor: not-allowed;}
 }
 
-input[type="submit"]{ 
-  --btnBg: #{$btnBg2};
-  &:hover, &:focus { --btnBg: #{$btnBg2Hover}; }
+input[type="button"],
+input[type="submit"],
+button,
+button[type="submit"] {  
+  background-color: $primaryColor; color: $white;
+  &:hover {box-shadow: $white 0 0 0 0, $primaryColor 0 0 0 2px;}
+  &:focus {box-shadow: $white 0 0 0 1px, $primaryColor 0 0 0 4px;}
+
   &[disabled] { --btnBg: #{$btnDisBg}; --btnColor: #{$btnDisColor};}
+}
+
+input, button{
+  &[type="reset"], &.reset, &[type="button"].reset { 
+    background-color: $secondaryColor; color: $fontColor;
+    box-shadow: $borderColor 0 0 0 1px;
+    &:hover, &:focus {color: $primaryColor;}
+    &:hover {box-shadow: $primaryColor 0 0 0 1px;}
+    &:focus {box-shadow: $secondaryColor 0 0 0 1px, $primaryColor 0 0 0 4px;}
+  }
 }
 // ------------------------------------------------------ //
 
@@ -252,7 +262,7 @@ input[type="checkbox"] {
   -webkit-appearance: none; -moz-appearance: none; appearance: none;
   margin:-.1em 7px 0 4px; 
   line-height: 1; 
-  border: 1px solid var(--inputBdr);
+  border: 1px solid $borderColor;
   vertical-align: middle;
   cursor: pointer;
 }
@@ -261,13 +271,12 @@ input[type="checkbox"] {
 input[type="radio"] {
   width: 1.2em; height: 1.2em; 
   border-radius: 50%;
-  &:hover, &:focus { border-width: 2px;}
+  &:hover, &:focus { border-color: $primaryColor;}
   &:checked{
     border-width: 2px;
+    border-color: $primaryColor;
     box-shadow: $white 0 0 0 3px inset, $primaryColor 0 0 0 10px inset;
-    &:focus {
-      box-shadow: $white 0 0 0 5px inset, $primaryColor 0 0 0 10px inset;
-    }
+    &:focus {border-width: 3px;}
   }
 }
 
@@ -275,7 +284,7 @@ input[type="radio"] {
 input[type="checkbox"] {
   width: 1em; height: 1em; 
   border-radius: 2px;
-  &:hover, &:focus { box-shadow: $primaryColor 0 0 0 1px;}
+  &:hover, &:focus { box-shadow: $primaryColor 0 0 0 1px; border-color: $primaryColor;}
   &:checked{
     background: var(--btnColor) url(../images/icon_check.svg) no-repeat center .06em;
     background-size: 88%;

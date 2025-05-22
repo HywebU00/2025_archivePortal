@@ -82,7 +82,7 @@ kbd {
 
 // 回頁面最上方 
 // --------------------------------------------------------------- //
-.goTop{
+button.goTop{
   --tinge: #{$primaryColor};
   --bg: #{$white};
   --size: 72px;
@@ -116,8 +116,8 @@ kbd {
   }
   &.show{ bottom: 20px;}
 
-  @media screen and ( min-width: calc($wwMaximum + 408px) ){
-    right: calc(50% - $wwMaximum*.5 - var(--size) - 100px - 16px );
+  @media screen and ( min-width: calc($wwMaximum + 144px + 64px) ){
+    right: calc(50% - $wwMaximum*.5 - var(--size) - 16px );
   }
 
 }
@@ -514,7 +514,7 @@ button.hasIcon{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100%;
-    filter: brightness(15);
+    filter: brightness(30);
   }
 
   &.upload::before{
@@ -528,10 +528,6 @@ button.hasIcon{
   }
   &.voice::before{
     background-image: url(../images/icon_voice.png);
-  }
-
-  &:hover, &:focus {
-    &::before{ filter:none;}
   }
 }
 

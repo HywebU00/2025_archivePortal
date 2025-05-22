@@ -67,7 +67,7 @@
         }
         img{
           top: calc(50% - 36px); left: min(12%, 38px);
-          width: 63px; height: 62px;
+          width: 64px; height: 64px; object-fit: contain;
         }
       }
     }
